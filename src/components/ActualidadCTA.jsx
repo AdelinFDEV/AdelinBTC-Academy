@@ -31,9 +31,9 @@ const ActualidadCTA = () => {
             <h2 className="text-4xl md:text-5xl font-black tracking-tight text-white mb-5 leading-[1.1]">
               Tu dosis semanal de <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-300 to-orange-500">Alpha.</span>
             </h2>
-            
+
             <p className="text-gray-400 text-lg leading-relaxed max-w-lg mx-auto md:mx-0">
-              Videos de análisis profundo, resúmenes de mercado y guías paso a paso. Todo el material educativo gratuito que necesitas, en un solo lugar.
+              Vídeos de YouTube, análisis de mercado y guías paso a paso. Material educativo gratuito publicado cada semana — sin coste, sin excusas.
             </p>
           </div>
 
@@ -53,7 +53,7 @@ const ActualidadCTA = () => {
                     <circle cx="12" cy="12" r="10"></circle>
                     <polygon points="10 8 16 12 10 16 10 8" fill="currentColor"></polygon>
                   </svg>
-                  <span className="text-white font-extrabold text-lg tracking-wide group-hover:text-orange-100 transition-colors">Entrar al Vlog</span>
+                  <span className="text-white font-extrabold text-lg tracking-wide group-hover:text-orange-100 transition-colors">Aprende Gratis</span>
                 </span>
               </div>
             </Link>

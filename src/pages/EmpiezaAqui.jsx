@@ -71,10 +71,20 @@ function StepCard({ step, index }) {
                 href={cta.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`inline-flex items-center gap-2.5 font-extrabold text-sm px-6 py-3.5 rounded-2xl transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.03] active:scale-[0.97] ${cta.primary ? `${step.btnBg} text-white shadow-[0_6px_25px_${step.glowColor}] hover:shadow-[0_10px_35px_${step.glowColor}]` : 'bg-white/[0.05] text-white border border-white/10 hover:bg-white/10'}`}
+                className={cta.overrideClass || `inline-flex items-center gap-2.5 font-extrabold text-sm px-6 py-3.5 rounded-2xl transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.03] active:scale-[0.97] ${cta.primary ? `${step.btnBg} text-white shadow-[0_6px_25px_${step.glowColor}] hover:shadow-[0_10px_35px_${step.glowColor}]` : 'bg-white/[0.05] text-white border border-white/10 hover:bg-white/10'}`}
               >
-                {cta.icon && cta.icon}
-                {cta.text}
+                {cta.icon && !cta.overrideClass && cta.icon}
+                {cta.overrideClass ? (
+                  <>
+                    <span className="relative z-10 text-white drop-shadow-md leading-tight text-center">{cta.text}</span>
+                    <svg className="relative z-10 transition-transform duration-300 group-hover:scale-110" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                    </svg>
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite]"></div>
+                  </>
+                ) : (
+                  cta.text
+                )}
               </a>
             ) : (
               <Link
@@ -95,7 +105,7 @@ function StepCard({ step, index }) {
 
 /* ── Steps Data ── */
 const YOUTUBE_CHANNEL = 'https://www.youtube.com/@AdelinBTC?sub_confirmation=1';
-const INSTAGRAM_URL   = 'https://www.instagram.com/adelinbtc';
+const WHATSAPP_URL    = 'https://wa.me/34600000000?text=Hola%20AdelinBTC%2C%20tengo%20una%20pregunta%3A';
 const MEXC_URL        = 'https://www.mexc.com/es-ES/register?inviteCode=mexc-1xydM';
 const TRADINGVIEW_URL = 'https://es.tradingview.com/?aff_id=133080';
 
@@ -104,7 +114,7 @@ const steps = [
     label: 'Comunidad',
     title: 'Sígueme y únete a la comunidad',
     description:
-      'No se trata solo de seguirme. Se trata de ser parte activa de una comunidad real donde resolvemos dudas, compartimos análisis en tiempo real y aprendemos juntos. Instagram y YouTube son el punto de partida para cualquier trader serio que quiera dar el salto.',
+      'No se trata solo de seguirme. Se trata de ser parte activa de una comunidad real donde resolvemos dudas, compartimos análisis en tiempo real y aprendemos juntos. WhatsApp y YouTube son el punto de partida para cualquier trader serio que quiera dar el salto.',
     pills: ['📲 Preguntas respondidas 1 a 1', '📊 Análisis semanales', '🔔 Alertas de mercado', '🤝 Comunidad privada'],
     ctas: [
       {
@@ -120,16 +130,10 @@ const steps = [
       },
       {
         text: 'Seguir en Instagram',
-        href: INSTAGRAM_URL,
+        href: 'https://www.instagram.com/adelinbtc',
         external: true,
         primary: false,
-        icon: (
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-          </svg>
-        ),
+        overrideClass: "group inline-flex items-center justify-center gap-2 sm:gap-3 text-white font-bold text-[0.85rem] sm:text-lg px-4 sm:px-10 py-3.5 sm:py-4 rounded-full transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_10px_40px_rgba(214,36,159,0.5)] active:scale-[0.98] w-full max-w-[320px] relative overflow-hidden"
       },
     ],
     borderColor: 'border-red-500/20',
@@ -356,17 +360,17 @@ const EmpiezaAqui = () => {
             </p>
             <div className="flex justify-center">
               <a
-                href={INSTAGRAM_URL}
+                href="https://www.instagram.com/adelinbtc"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-3 bg-[#E1306C] hover:bg-[#C13584] text-white font-bold text-[0.95rem] px-8 py-4 rounded-full transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(225,48,108,0.4)] active:scale-[0.98]"
+                className="group inline-flex items-center justify-center gap-2 sm:gap-3 text-white font-bold text-[0.85rem] sm:text-lg px-4 sm:px-10 py-3.5 sm:py-4 rounded-full transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_10px_40px_rgba(214,36,159,0.5)] active:scale-[0.98] w-full max-w-[320px] relative overflow-hidden"
+                style={{ background: 'linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)' }}
               >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                <span className="relative z-10 text-white drop-shadow-md leading-tight text-center">Escríbeme por Instagram</span>
+                <svg className="relative z-10 transition-transform duration-300 group-hover:scale-110" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
                 </svg>
-                Mensaje en Instagram
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite]"></div>
               </a>
             </div>
           </div>

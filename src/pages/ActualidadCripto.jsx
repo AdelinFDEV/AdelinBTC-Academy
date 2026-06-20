@@ -1,20 +1,15 @@
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
+import { posts } from '../data/posts';
 
-// --- MOCK DATA ---
-const categories = ["Todas", "Análisis de Mercado", "Guías PDF", "Tutoriales", "Noticias"];
-
-const mockEntries = [];
+const categories = ["Todas", "Análisis de Mercado", "Guías", "Tutoriales", "Noticias"];
 
 const ActualidadCripto = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState("Todas");
 
-  // Lógica de filtrado
-  const filteredEntries = mockEntries.filter(entry => {
-    // 1. Filtrar por categoría
+  const filteredEntries = posts.filter(entry => {
     const matchesCategory = activeCategory === "Todas" || entry.category === activeCategory;
-    // 2. Filtrar SOLO por título
     const matchesSearch = entry.title.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
@@ -38,10 +33,10 @@ const ActualidadCripto = () => {
           <span className="w-8 h-px bg-gradient-to-l from-transparent to-orange-500/40"></span>
         </span>
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-5">
-          Actualidad <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-400 to-orange-500 animate-gradient">Cripto</span>
+          Aprende <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-400 to-orange-500 animate-gradient">Gratis</span>
         </h1>
         <p className="text-gray-500 text-lg max-w-2xl mx-auto leading-relaxed">
-          Explora nuestros últimos vídeos, análisis de mercado y guías en PDF. Contenido de alto valor actualizado constantemente.
+          Vídeos de YouTube, análisis de mercado y material educativo gratuito. Todo en un solo lugar, actualizado cada semana.
         </p>
       </div>
 
@@ -89,49 +84,85 @@ const ActualidadCripto = () => {
       {/* Content Grid (Vlog Entries) */}
       <div className="max-w-6xl mx-auto px-5 pb-24 w-full flex-1">
         {filteredEntries.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="flex flex-col gap-16">
             {filteredEntries.map(entry => (
-              <div key={entry.id} className="group bg-white/[0.02] border border-white/[0.05] rounded-3xl overflow-hidden hover:border-orange-500/30 hover:bg-white/[0.03] transition-all duration-500 flex flex-col">
-                {/* Thumbnail */}
-                <div className="relative h-56 overflow-hidden">
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
-                  <img src={entry.thumbnail} alt={entry.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                  
-                  {/* Badge */}
-                  <div className="absolute top-4 left-4 z-20 bg-black/60 backdrop-blur-md border border-white/10 px-3 py-1.5 rounded-full flex items-center gap-2">
-                    <span className="text-[0.65rem] font-bold tracking-widest uppercase text-white">{entry.type}</span>
-                  </div>
+              <article key={entry.id} className="max-w-3xl mx-auto w-full">
+                {/* Article header */}
+                <div className="flex flex-wrap items-center gap-3 mb-5">
+                  <span className="text-[0.65rem] font-black uppercase tracking-widest text-blue-400 bg-blue-500/10 border border-blue-500/20 px-3 py-1 rounded-full">
+                    {entry.category}
+                  </span>
+                  <span className="text-gray-600 text-xs">{entry.date}</span>
+                  <span className="text-gray-700 text-xs">·</span>
+                  <span className="text-gray-600 text-xs">{entry.readTime} de lectura</span>
                 </div>
 
-                {/* Content */}
-                <div className="p-6 flex flex-col flex-1">
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-orange-400 text-xs font-bold uppercase tracking-wider">{entry.category}</span>
-                    <span className="text-gray-500 text-xs font-medium">{entry.date}</span>
+                <h2 className="text-2xl md:text-3xl font-extrabold text-white leading-snug tracking-tight mb-4">
+                  {entry.title}
+                </h2>
+
+                <p className="text-gray-400 text-lg leading-relaxed mb-8 border-l-2 border-orange-500/40 pl-4 italic">
+                  {entry.excerpt}
+                </p>
+
+                {/* Cover image / thumbnail */}
+                {entry.youtubeId ? (
+                  <a href={`https://www.youtube.com/watch?v=${entry.youtubeId}`} target="_blank" rel="noopener noreferrer"
+                    className="relative block aspect-video rounded-2xl overflow-hidden mb-8 border border-white/[0.06]">
+                    <img src={`https://img.youtube.com/vi/${entry.youtubeId}/maxresdefault.jpg`} alt={entry.title}
+                      className="w-full h-full object-cover" />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-16 h-16 rounded-full bg-red-600/90 flex items-center justify-center shadow-[0_4px_30px_rgba(239,68,68,0.5)]">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+                      </div>
+                    </div>
+                  </a>
+                ) : entry.image ? (
+                  <div className="aspect-video rounded-2xl overflow-hidden mb-8 border border-white/[0.06]">
+                    <img src={entry.image} alt={entry.title} className="w-full h-full object-cover" />
                   </div>
-                  
-                  <h3 className="text-xl font-bold text-white leading-snug mb-3 group-hover:text-orange-400 transition-colors line-clamp-2">
-                    {entry.title}
-                  </h3>
-                  
-                  <p className="text-gray-400 text-sm leading-relaxed mb-6 line-clamp-3">
-                    {entry.description}
-                  </p>
-                  
-                  <div className="mt-auto">
-                    <button className="flex items-center gap-2 text-sm font-bold text-white hover:text-orange-400 transition-colors">
-                      {entry.type === 'PDF' ? 'Descargar Guía' : 'Ver Contenido'}
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform">
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                        <polyline points="12 5 19 12 12 19"></polyline>
-                      </svg>
-                    </button>
+                ) : (
+                  <div className="aspect-video rounded-2xl overflow-hidden mb-8 border border-blue-500/20 relative flex flex-col items-start justify-end p-6 md:p-8"
+                    style={{ background: 'linear-gradient(135deg, #060612 0%, #08082a 50%, #06060e 100%)' }}>
+                    <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
+                    <div className="absolute top-6 right-6 flex items-center gap-3 opacity-50">
+                      <span className="text-4xl">🇨🇳</span>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6b7280" strokeWidth="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                      <span className="text-4xl">🇺🇸</span>
+                    </div>
+                    <span className="relative z-10 text-[0.6rem] font-black uppercase tracking-[0.2em] text-blue-400 bg-blue-500/10 border border-blue-500/20 px-2 py-1 rounded-full mb-3">{entry.category}</span>
+                    <h3 className="relative z-10 text-white font-bold text-xl md:text-2xl leading-snug max-w-lg">{entry.title}</h3>
                   </div>
+                )}
+
+                {/* Body */}
+                <div className="prose prose-invert prose-sm md:prose-base max-w-none">
+                  {entry.body.split('\n\n').map((block, i) => {
+                    if (!block.trim()) return null;
+                    const isHeading = block.trim().length < 80 && !block.includes('.') && i !== 0;
+                    if (isHeading) {
+                      return <h3 key={i} className="text-white font-bold text-lg mt-8 mb-3">{block.trim()}</h3>;
+                    }
+                    return <p key={i} className="text-gray-400 leading-relaxed mb-4 text-[1rem]">{block.trim()}</p>;
+                  })}
                 </div>
-              </div>
+
+                {/* Source link */}
+                {entry.sourceUrl && (
+                  <div className="mt-8 pt-6 border-t border-white/[0.06] flex items-center gap-3">
+                    <span className="text-gray-600 text-xs">Fuente:</span>
+                    <a href={entry.sourceUrl} target="_blank" rel="noopener noreferrer"
+                      className="text-xs font-semibold text-orange-400 hover:text-orange-300 transition-colors flex items-center gap-1">
+                      {entry.sourceLabel || entry.sourceUrl}
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    </a>
+                  </div>
+                )}
+              </article>
             ))}
           </div>
         ) : (
+
           /* Empty State / No Results */
           <div className="flex flex-col items-center justify-center py-20 border border-dashed border-white/[0.08] rounded-3xl bg-white/[0.01]">
             <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center mb-6 border border-white/10">

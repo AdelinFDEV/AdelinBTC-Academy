@@ -10,25 +10,42 @@ import EmpiezaAqui from './pages/EmpiezaAqui';
 import ActualidadCTA from './components/ActualidadCTA';
 import HowItWorks from './components/HowItWorks';
 import Navbar from './components/Navbar';
+import TestimonialsSection from './components/TestimonialsSection';
+import AuthorSection from './components/AuthorSection';
+import ForWhoSection from './components/ForWhoSection';
+import FAQSection from './components/FAQSection';
+import StickyBuyBar from './components/StickyBuyBar';
+import ScrollProgress from './components/ScrollProgress';
+import LatestPostsSection from './components/LatestPostsSection';
+import FloatingContact from './components/FloatingContact';
 
 function HomePage() {
   return (
     <>
+      <ScrollProgress />
+
       <div className="sticky top-0 z-50 border-b border-white/[0.06] bg-[#060608]/90 backdrop-blur-md transition-all duration-300">
         <Navbar />
       </div>
-      
-      {/* Content Sections */}
+
+      {/* Content Sections — order optimized for conversion */}
       <Hero />
-      <HowItWorks />
-      <ActualidadCTA />
-      <ConsultingSection />
+      <TestimonialsSection />
+      <AuthorSection />
       <ChapterMap />
+      <ForWhoSection />
+      <HowItWorks />
+      <FAQSection />
+      <ConsultingSection />
+      <ActualidadCTA />
+      <LatestPostsSection />
       <VideoSection />
       <ContactSection />
+      <StickyBuyBar />
+      <FloatingContact />
       
       {/* Footer */}
-      <footer className="py-12 md:py-16 border-t border-white/[0.04] text-center bg-[#060608] relative mt-10">
+      <footer className="py-12 md:py-16 pb-28 md:pb-28 border-t border-white/[0.04] text-center bg-[#060608] relative mt-10">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] h-[1px] bg-gradient-to-r from-transparent via-orange-500/30 to-transparent"></div>
         <div className="max-w-5xl mx-auto px-5 flex flex-col items-center">
           

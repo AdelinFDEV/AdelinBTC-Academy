@@ -1,4 +1,21 @@
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
+
+function useInView(options = {}) {
+  const ref = useRef(null);
+  const [inView, setInView] = useState(false);
+  useEffect(() => {
+    if (!ref.current) { setInView(true); return; }
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setInView(true); observer.disconnect(); } },
+      { threshold: 0, rootMargin: '0px 0px -10% 0px', ...options }
+    );
+    observer.observe(ref.current);
+    // Safety fallback: never leave content permanently hidden
+    const fallback = setTimeout(() => setInView(true), 1500);
+    return () => { observer.disconnect(); clearTimeout(fallback); };
+  }, []);
+  return [ref, inView];
+}
 
 const steps = [
   {
@@ -38,6 +55,7 @@ const steps = [
 ];
 
 const HowItWorks = () => {
+  const [gridRef, gridInView] = useInView();
 
   const handleDiscordDownload = (e) => {
     e.preventDefault();
@@ -72,12 +90,16 @@ const HowItWorks = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 relative">
+        <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 relative">
           {/* Connecting line for desktop */}
           <div className="hidden md:block absolute top-12 left-1/6 right-1/6 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent z-0"></div>
 
           {steps.map((step, idx) => (
-            <div key={idx} className="relative z-10 flex flex-col items-center text-center p-6 bg-white/[0.02] border border-white/[0.05] rounded-3xl backdrop-blur-sm hover:border-white/10 transition-colors h-full">
+            <div
+              key={idx}
+              className={`relative z-10 flex flex-col items-center text-center p-6 bg-white/[0.02] border border-white/[0.05] rounded-3xl backdrop-blur-sm hover:border-white/10 hover:-translate-y-1 transition-all duration-500 h-full ${gridInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              style={{ transitionDelay: `${idx * 120}ms` }}
+            >
               <div className="w-16 h-16 rounded-2xl bg-[#0a0a0f] border border-white/[0.08] flex items-center justify-center mb-5 shadow-[0_0_20px_rgba(0,0,0,0.5)] shrink-0">
                 {step.icon}
               </div>
