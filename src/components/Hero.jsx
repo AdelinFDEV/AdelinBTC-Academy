@@ -182,11 +182,16 @@ const Hero = () => {
           <div className="flex flex-col items-center w-full mb-5 gap-3 lg:hidden">
             <div className="relative flex items-center justify-center w-full">
               <div className="absolute inset-0 bg-orange-500/10 blur-[60px] rounded-full pointer-events-none" />
-              <img
-                src="/Book.png"
-                alt="AdelinBTC: Master Cripto Definitivo"
-                className="relative w-[90%] sm:w-[75%] max-w-[400px] h-auto drop-shadow-[0_30px_80px_rgba(0,0,0,0.75)] rounded-2xl"
-              />
+              <picture>
+                <source srcSet="/Book.webp" type="image/webp" />
+                <img
+                  src="/Book.png"
+                  alt="AdelinBTC: Master Cripto Definitivo"
+                  className="relative w-[90%] sm:w-[75%] max-w-[400px] h-auto drop-shadow-[0_30px_80px_rgba(0,0,0,0.75)] rounded-2xl"
+                  loading="eager"
+                  fetchPriority="high"
+                />
+              </picture>
             </div>
             {/* Lifetime updates banner */}
             <div className="relative flex items-center gap-3 w-[90%] sm:w-[75%] max-w-[400px] bg-gradient-to-r from-[#1a1000] via-[#140d00] to-[#1a1000] border border-amber-500/40 rounded-2xl px-4 py-3 shadow-[0_0_30px_rgba(245,158,11,0.15)]">
@@ -324,11 +329,16 @@ const Hero = () => {
           <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#060608] to-transparent z-10" />
           {/* glow behind image */}
           <div className="absolute inset-0 bg-orange-500/[0.06] blur-[80px]" />
-          <img
-            src="/Book.png"
-            alt="AdelinBTC: Master Cripto Definitivo"
-            className="w-full h-full object-cover object-center drop-shadow-[0_0_60px_rgba(0,0,0,0.8)]"
-          />
+          <picture>
+            <source srcSet="/Book.webp" type="image/webp" />
+            <img
+              src="/Book.png"
+              alt="AdelinBTC: Master Cripto Definitivo"
+              className="w-full h-full object-cover object-center drop-shadow-[0_0_60px_rgba(0,0,0,0.8)]"
+              loading="eager"
+              fetchPriority="high"
+            />
+          </picture>
 
         </div>
       </div>
