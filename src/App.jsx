@@ -11,7 +11,6 @@ import Herramientas from './pages/Herramientas';
 import ActualidadCTA from './components/ActualidadCTA';
 import HowItWorks from './components/HowItWorks';
 import Navbar from './components/Navbar';
-import TestimonialsSection from './components/TestimonialsSection';
 import AuthorSection from './components/AuthorSection';
 import ForWhoSection from './components/ForWhoSection';
 import FAQSection from './components/FAQSection';
@@ -30,7 +29,7 @@ function HomePage() {
 
       {/* Content Sections — order optimized for conversion */}
       <Hero />
-      <TestimonialsSection />
+      <LatestPostsSection />
       <AuthorSection />
       <ChapterMap />
       <ForWhoSection />
@@ -38,7 +37,6 @@ function HomePage() {
       <FAQSection />
       <ConsultingSection />
       <ActualidadCTA />
-      <LatestPostsSection />
       <VideoSection />
       <ContactSection />
       <StickyBuyBar />

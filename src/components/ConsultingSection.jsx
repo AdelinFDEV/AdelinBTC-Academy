@@ -101,6 +101,23 @@ const ConsultingSection = () => {
                 {/* Subtle top accent line */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-[1px] bg-gradient-to-r from-transparent via-orange-500/40 to-transparent"></div>
                 
+                {/* Overlay coming soon */}
+                <div className="absolute inset-0 bg-[#060608]/75 backdrop-blur-[3px] flex flex-col items-center justify-center p-6 text-center z-20">
+                  <div className="w-14 h-14 bg-orange-500/10 border border-orange-500/30 rounded-full flex items-center justify-center text-orange-400 mb-4 shadow-[0_0_20px_rgba(255,153,0,0.2)] animate-pulse">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                  </div>
+                  <span className="inline-flex items-center gap-1.5 bg-orange-500/20 text-orange-400 px-3 py-1 rounded-full text-[0.7rem] font-bold uppercase tracking-wider border border-orange-500/30 mb-3">
+                    Próximamente
+                  </span>
+                  <h4 className="text-lg font-bold text-white mb-2">Reservas no disponibles</h4>
+                  <p className="text-xs text-gray-400 max-w-[280px] leading-relaxed">
+                    Las asesorías 1 a 1 volverán a estar activas pronto. ¡Mantente atento para reservar tu plaza!
+                  </p>
+                </div>
+                
                 <div className="mb-6 border-b border-white/[0.05] pb-5">
                    <h3 className="text-lg font-bold text-white mb-1.5 tracking-tight">Reserva tu sesión</h3>
                    <p className="text-sm text-gray-500 leading-relaxed">Las plazas son limitadas. Selecciona un día dentro de la próxima semana vista.</p>
