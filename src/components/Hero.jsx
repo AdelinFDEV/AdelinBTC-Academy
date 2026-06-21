@@ -122,7 +122,7 @@ const Hero = () => {
   const plazasLeft = Math.max(2, 2 + Math.floor(totalHours / 24));
 
   return (
-    <header className="relative border-b border-white/[0.06] isolate overflow-hidden min-h-[92vh] flex flex-col">
+    <header className="relative border-b border-white/[0.06] isolate overflow-hidden min-h-[92vh] lg:min-h-screen flex flex-col">
 
       {/* ── Background layers ── */}
       <div className="absolute inset-0 -z-20 overflow-hidden">
@@ -289,45 +289,45 @@ const Hero = () => {
 
         </div>
 
-        {/* ══ RIGHT COLUMN ══ */}
-        <div className="relative flex items-center justify-center w-full max-w-[340px] sm:max-w-[420px] lg:w-[42%] lg:max-w-none shrink-0 pb-16 lg:pb-0">
-
-          {/* Outer glow ring */}
-          <div className="absolute inset-0 bg-orange-500/[0.08] rounded-full blur-[100px] pointer-events-none" />
-
-          {/* Book cover */}
-          <div
-            className="relative w-full animate-float"
-            style={{ transform: 'perspective(1200px) rotateY(-8deg) rotateX(3deg)', animationDuration: '7s' }}
-          >
-            <div className="absolute -inset-6 bg-gradient-to-br from-orange-500/20 to-amber-600/8 rounded-[3rem] blur-2xl -z-10" />
-            <img
-              src="/Book.png"
-              alt="AdelinBTC: Master Cripto Definitivo"
-              className="w-full h-auto drop-shadow-[0_40px_80px_rgba(0,0,0,0.75)] rounded-2xl relative z-10"
-            />
-
-            {/* Lifetime updates — hero card */}
-            <div className="absolute -bottom-7 left-1/2 -translate-x-1/2 z-20 w-[92%] max-w-[380px]">
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-amber-500/30 via-orange-500/20 to-amber-500/30 blur-xl -z-10 animate-glow-pulse" />
-              <div className="relative flex items-center gap-3 bg-gradient-to-r from-[#1a1000] via-[#140d00] to-[#1a1000] border border-amber-500/40 rounded-2xl px-4 py-3.5 shadow-[0_0_40px_rgba(245,158,11,0.2),inset_0_1px_0_rgba(255,255,255,0.06)]">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-[1px] bg-gradient-to-r from-transparent via-amber-400/60 to-transparent rounded-full" />
-                <div className="shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500/25 to-orange-600/15 border border-amber-500/30 flex items-center justify-center shadow-[0_0_20px_rgba(245,158,11,0.3)]">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-amber-400 drop-shadow-[0_0_6px_rgba(251,191,36,0.8)] animate-spin-slow" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M4 4V9H4.58152M19.9381 11C19.446 7.05369 16.0796 4 12 4C8.64262 4 5.76829 6.06817 4.58152 9M4.58152 9H9M20 20V15H19.4185M4.06189 13C4.55399 16.9463 7.92038 20 12 20C15.3574 20 18.2317 17.9318 19.4185 15M19.4185 15H15"/>
-                  </svg>
-                </div>
-                <div className="flex flex-col gap-0.5 min-w-0">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-yellow-200 to-amber-400 font-black text-[0.8rem] uppercase tracking-wide leading-tight">
-                    Actualizaciones Gratuitas de Por Vida
-                  </span>
-                  <span className="text-amber-700 text-[0.65rem] font-medium leading-tight">
-                    El mercado cambia. Tu Master también. Sin coste adicional.
-                  </span>
-                </div>
+        {/* ══ RIGHT COLUMN — mobile inline, desktop absolute full-height ══ */}
+        {/* Mobile: normal flow */}
+        <div className="relative flex items-center justify-center w-full max-w-[300px] sm:max-w-[380px] pb-10 lg:hidden">
+          <img
+            src="/Book.png"
+            alt="AdelinBTC: Master Cripto Definitivo"
+            className="w-full h-auto drop-shadow-[0_30px_60px_rgba(0,0,0,0.7)] rounded-2xl"
+          />
+          {/* Lifetime updates card mobile */}
+          <div className="absolute -bottom-7 left-1/2 -translate-x-1/2 z-20 w-[92%] max-w-[340px]">
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-amber-500/30 via-orange-500/20 to-amber-500/30 blur-xl -z-10 animate-glow-pulse" />
+            <div className="relative flex items-center gap-3 bg-gradient-to-r from-[#1a1000] via-[#140d00] to-[#1a1000] border border-amber-500/40 rounded-2xl px-4 py-3.5 shadow-[0_0_40px_rgba(245,158,11,0.2),inset_0_1px_0_rgba(255,255,255,0.06)]">
+              <div className="shrink-0 w-9 h-9 rounded-xl bg-gradient-to-br from-amber-500/25 to-orange-600/15 border border-amber-500/30 flex items-center justify-center">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" className="text-amber-400 animate-spin-slow" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M4 4V9H4.58152M19.9381 11C19.446 7.05369 16.0796 4 12 4C8.64262 4 5.76829 6.06817 4.58152 9M4.58152 9H9M20 20V15H19.4185M4.06189 13C4.55399 16.9463 7.92038 20 12 20C15.3574 20 18.2317 17.9318 19.4185 15M19.4185 15H15"/>
+                </svg>
+              </div>
+              <div className="flex flex-col gap-0.5 min-w-0">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-yellow-200 to-amber-400 font-black text-[0.75rem] uppercase tracking-wide leading-tight">Actualizaciones Gratuitas de Por Vida</span>
+                <span className="text-amber-700 text-[0.6rem] font-medium leading-tight">El mercado cambia. Tu Master también. Sin coste adicional.</span>
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Desktop: absolute right panel full height */}
+        <div className="hidden lg:block absolute top-0 right-0 h-full w-[44%] pointer-events-none select-none">
+          {/* fade left edge into background */}
+          <div className="absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-[#060608] to-transparent z-10" />
+          {/* fade bottom */}
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#060608] to-transparent z-10" />
+          {/* glow behind image */}
+          <div className="absolute inset-0 bg-orange-500/[0.06] blur-[80px]" />
+          <img
+            src="/Book.png"
+            alt="AdelinBTC: Master Cripto Definitivo"
+            className="w-full h-full object-cover object-center drop-shadow-[0_0_60px_rgba(0,0,0,0.8)]"
+          />
+
         </div>
       </div>
     </header>
