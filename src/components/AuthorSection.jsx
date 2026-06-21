@@ -87,28 +87,31 @@ const AuthorSection = () => {
             </div>
 
             {/* Social proof */}
-            <div className="flex flex-wrap items-center gap-4 justify-center lg:justify-start">
+            <div className="flex items-center gap-3 justify-center lg:justify-start">
+              {/* YouTube */}
               <a
                 href="https://www.youtube.com/@AdelinBTC?sub_confirmation=1"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 bg-red-600/10 border border-red-500/35 text-red-400 font-bold text-sm px-6 py-3 rounded-full hover:bg-gradient-to-r hover:from-red-600 hover:to-rose-600 hover:border-transparent hover:text-white shadow-[0_0_15px_rgba(239,68,68,0.1)] hover:shadow-[0_0_25px_rgba(239,68,68,0.5)] transition-all duration-300 transform hover:-translate-y-0.5 group"
+                className="group inline-flex items-center gap-2 bg-red-600 text-white font-bold text-xs sm:text-sm px-4 sm:px-6 py-2.5 sm:py-3 rounded-full shadow-[0_4px_20px_rgba(239,68,68,0.4)] hover:shadow-[0_6px_28px_rgba(239,68,68,0.6)] hover:scale-[1.04] active:scale-[0.97] transition-all duration-300"
               >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="group-hover:scale-110 transition-transform duration-300">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" className="shrink-0">
                   <path d="M21.582 6.186a2.684 2.684 0 0 0-1.884-1.895C17.985 3.843 12 3.843 12 3.843s-5.985 0-7.698.448A2.684 2.684 0 0 0 2.418 6.186C2 7.904 2 12 2 12s0 4.096.418 5.814a2.684 2.684 0 0 0 1.884 1.895c1.713.448 7.698.448 7.698.448s5.985 0 7.698-.448a2.684 2.684 0 0 0 1.884-1.895C22 16.096 22 12 22 12s0-4.096-.418-5.814zM9.912 15.352V8.648L15.688 12l-5.776 3.352z"/>
                 </svg>
-                Ver canal de YouTube
+                <span className="hidden sm:inline">Ver canal de</span> YouTube
               </a>
+              {/* Instagram */}
               <a
                 href="https://www.instagram.com/adelinbtc"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 bg-pink-500/10 border border-pink-500/35 text-pink-400 font-bold text-sm px-6 py-3 rounded-full hover:bg-gradient-to-tr hover:from-yellow-500 hover:via-pink-500 hover:to-purple-600 hover:border-transparent hover:text-white shadow-[0_0_15px_rgba(236,72,153,0.1)] hover:shadow-[0_0_25px_rgba(236,72,153,0.5)] transition-all duration-300 transform hover:-translate-y-0.5 group"
+                className="group inline-flex items-center gap-2 text-white font-bold text-xs sm:text-sm px-4 sm:px-6 py-2.5 sm:py-3 rounded-full shadow-[0_4px_20px_rgba(220,39,67,0.4)] hover:shadow-[0_6px_28px_rgba(220,39,67,0.6)] hover:scale-[1.04] active:scale-[0.97] transition-all duration-300"
+                style={{ background: 'linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)' }}
               >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:scale-110 transition-transform duration-300">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
                 </svg>
-                Escríbeme por Instagram
+                <span className="hidden sm:inline">Escríbeme por</span> Instagram
               </a>
             </div>
           </div>

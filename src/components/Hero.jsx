@@ -178,6 +178,31 @@ const Hero = () => {
             </span>
           </h1>
 
+          {/* Book image + updates banner — mobile only, between H1 and social proof */}
+          <div className="flex flex-col items-center w-full mb-5 gap-3 lg:hidden">
+            <div className="relative flex items-center justify-center w-full">
+              <div className="absolute inset-0 bg-orange-500/10 blur-[60px] rounded-full pointer-events-none" />
+              <img
+                src="/Book.png"
+                alt="AdelinBTC: Master Cripto Definitivo"
+                className="relative w-[90%] sm:w-[75%] max-w-[400px] h-auto drop-shadow-[0_30px_80px_rgba(0,0,0,0.75)] rounded-2xl"
+              />
+            </div>
+            {/* Lifetime updates banner */}
+            <div className="relative flex items-center gap-3 w-[90%] sm:w-[75%] max-w-[400px] bg-gradient-to-r from-[#1a1000] via-[#140d00] to-[#1a1000] border border-amber-500/40 rounded-2xl px-4 py-3 shadow-[0_0_30px_rgba(245,158,11,0.15)]">
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-[1px] bg-gradient-to-r from-transparent via-amber-400/50 to-transparent" />
+              <div className="shrink-0 w-8 h-8 rounded-xl bg-gradient-to-br from-amber-500/25 to-orange-600/15 border border-amber-500/30 flex items-center justify-center">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="text-amber-400 animate-spin-slow" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M4 4V9H4.58152M19.9381 11C19.446 7.05369 16.0796 4 12 4C8.64262 4 5.76829 6.06817 4.58152 9M4.58152 9H9M20 20V15H19.4185M4.06189 13C4.55399 16.9463 7.92038 20 12 20C15.3574 20 18.2317 17.9318 19.4185 15M19.4185 15H15"/>
+                </svg>
+              </div>
+              <div className="flex flex-col gap-0.5 min-w-0">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-yellow-200 to-amber-400 font-black text-[0.72rem] uppercase tracking-wide leading-tight">Actualizaciones Gratuitas de Por Vida</span>
+                <span className="text-amber-700 text-[0.6rem] font-medium leading-tight">El mercado cambia. Tu Master también. Sin coste adicional.</span>
+              </div>
+            </div>
+          </div>
+
           {/* Social proof bar */}
           <div className="flex items-center gap-3 mb-5 justify-center lg:justify-start flex-wrap">
             {/* Avatar stack */}
@@ -290,29 +315,6 @@ const Hero = () => {
         </div>
 
         {/* ══ RIGHT COLUMN — mobile inline, desktop absolute full-height ══ */}
-        {/* Mobile: normal flow */}
-        <div className="relative flex items-center justify-center w-full max-w-[300px] sm:max-w-[380px] pb-10 lg:hidden">
-          <img
-            src="/Book.png"
-            alt="AdelinBTC: Master Cripto Definitivo"
-            className="w-full h-auto drop-shadow-[0_30px_60px_rgba(0,0,0,0.7)] rounded-2xl"
-          />
-          {/* Lifetime updates card mobile */}
-          <div className="absolute -bottom-7 left-1/2 -translate-x-1/2 z-20 w-[92%] max-w-[340px]">
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-amber-500/30 via-orange-500/20 to-amber-500/30 blur-xl -z-10 animate-glow-pulse" />
-            <div className="relative flex items-center gap-3 bg-gradient-to-r from-[#1a1000] via-[#140d00] to-[#1a1000] border border-amber-500/40 rounded-2xl px-4 py-3.5 shadow-[0_0_40px_rgba(245,158,11,0.2),inset_0_1px_0_rgba(255,255,255,0.06)]">
-              <div className="shrink-0 w-9 h-9 rounded-xl bg-gradient-to-br from-amber-500/25 to-orange-600/15 border border-amber-500/30 flex items-center justify-center">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" className="text-amber-400 animate-spin-slow" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M4 4V9H4.58152M19.9381 11C19.446 7.05369 16.0796 4 12 4C8.64262 4 5.76829 6.06817 4.58152 9M4.58152 9H9M20 20V15H19.4185M4.06189 13C4.55399 16.9463 7.92038 20 12 20C15.3574 20 18.2317 17.9318 19.4185 15M19.4185 15H15"/>
-                </svg>
-              </div>
-              <div className="flex flex-col gap-0.5 min-w-0">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-yellow-200 to-amber-400 font-black text-[0.75rem] uppercase tracking-wide leading-tight">Actualizaciones Gratuitas de Por Vida</span>
-                <span className="text-amber-700 text-[0.6rem] font-medium leading-tight">El mercado cambia. Tu Master también. Sin coste adicional.</span>
-              </div>
-            </div>
-          </div>
-        </div>
 
         {/* Desktop: absolute right panel full height */}
         <div className="hidden lg:block absolute top-0 right-0 h-full w-[44%] pointer-events-none select-none">
