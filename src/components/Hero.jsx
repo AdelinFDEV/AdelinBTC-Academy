@@ -290,21 +290,21 @@ const Hero = () => {
         </div>
 
         {/* ══ RIGHT COLUMN ══ */}
-        <div className="flex-1 relative flex items-center justify-center w-full max-w-[420px] lg:max-w-none pb-16 lg:pb-0">
+        <div className="flex-1 relative flex items-center justify-center w-full max-w-[300px] sm:max-w-[360px] lg:max-w-none pb-16 lg:pb-0">
 
           {/* Outer glow ring */}
-          <div className="absolute inset-0 bg-orange-500/[0.06] rounded-full blur-[100px] pointer-events-none" />
+          <div className="absolute inset-0 bg-orange-500/[0.08] rounded-full blur-[100px] pointer-events-none" />
 
-          {/* Mockup */}
+          {/* Book cover */}
           <div
             className="relative w-full animate-float"
-            style={{ transform: 'perspective(1000px) rotateY(-6deg) rotateX(2deg)', animationDuration: '7s' }}
+            style={{ transform: 'perspective(1200px) rotateY(-8deg) rotateX(3deg)', animationDuration: '7s' }}
           >
-            <div className="absolute -inset-6 bg-gradient-to-br from-orange-500/15 to-amber-600/5 rounded-[3rem] blur-2xl -z-10" />
+            <div className="absolute -inset-6 bg-gradient-to-br from-orange-500/20 to-amber-600/8 rounded-[3rem] blur-2xl -z-10" />
             <img
-              src="/mockup.png"
+              src="/Book.png"
               alt="AdelinBTC: Master Cripto Definitivo"
-              className="w-full h-auto drop-shadow-[0_40px_80px_rgba(0,0,0,0.7)] rounded-2xl relative z-10"
+              className="w-full h-auto drop-shadow-[0_40px_80px_rgba(0,0,0,0.75)] rounded-2xl relative z-10"
             />
 
             {/* Lifetime updates — hero card */}
