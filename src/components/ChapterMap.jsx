@@ -89,8 +89,8 @@ const phases = [
     lineColor: 'from-orange-500/60',
     premiumCount: 9,
     subChapters: [
-      { title: 'Cómo usar CoinMarketCap (sin que te la cuelen)', locked: false },
-      { title: 'Cómo leer la página de un token', locked: false },
+      { title: 'Cómo usar CoinMarketCap (sin que te la cuelen)', locked: false, url: 'https://drive.google.com/file/d/1wB7dAgHv0ocRW3BME1MlJV4rab8gYCMm/view?usp=drive_link' },
+      { title: 'Cómo leer la página de un token', locked: false, url: 'https://drive.google.com/file/d/1R7N1eMLoZLFMZ82T7q9QNJguUb4WacQe/view?usp=drive_link' },
       { title: 'Manipulación de las ballenas', locked: true },
       { title: 'Blindaje total de tus fondos', locked: true },
     ]
@@ -113,8 +113,8 @@ const phases = [
     lineColor: 'from-blue-500/60',
     premiumCount: 7,
     subChapters: [
-      { title: '¿Es posible que el token alcance ese precio?', locked: false },
-      { title: 'Red Flags al analizar un token', locked: false },
+      { title: '¿Es posible que el token alcance ese precio?', locked: false, url: 'https://drive.google.com/file/d/1asOILPA5mNUIt4Kq79jRdoFa8TqLzyiq/view?usp=drive_link' },
+      { title: 'Red Flags al analizar un token', locked: false, url: 'https://drive.google.com/file/d/1-HSTr5Z7W9WmjsuxHPdhYhsZLkf1Vblo/view?usp=drive_link' },
       { title: 'Proyección matemática del precio', locked: true },
       { title: 'Cuándo comprar y cuándo vender', locked: true },
     ]
@@ -137,7 +137,7 @@ const phases = [
     lineColor: 'from-emerald-500/60',
     premiumCount: 12,
     subChapters: [
-      { title: 'La regla del 1%', locked: false },
+      { title: 'La regla del 1%', locked: false, url: 'https://drive.google.com/file/d/18ON-sg9f1DIPH4YLgKp-yyxQ5TjzMfej/view?usp=drive_link' },
       { title: 'Estrategia y Diario de Trading Profesional', locked: true, noBlur: true },
       { title: 'Cálculo de posición avanzado', locked: true },
       { title: 'Ratio Riesgo/Beneficio Asimétrico', locked: true },
@@ -276,10 +276,13 @@ function PhaseCard({ phase, index, isOpen, onToggle }) {
                     </span>
                   </div>
                 ) : (
-                  <button
+                  <a
                     key={i}
-                    onClick={() => {}}
-                    className={`group/item relative flex items-center gap-3 px-4 py-3 rounded-xl border text-left w-full transition-all duration-200 cursor-pointer
+                    href={sub.url || undefined}
+                    target={sub.url ? '_blank' : undefined}
+                    rel={sub.url ? 'noopener noreferrer' : undefined}
+                    onClick={sub.url ? undefined : (e) => e.preventDefault()}
+                    className={`group/item relative flex items-center gap-3 px-4 py-3 rounded-xl border text-left w-full transition-all duration-200 ${sub.url ? 'cursor-pointer' : 'cursor-default'}
                       ${phase.bg} ${phase.border}
                       hover:scale-[1.02] hover:shadow-[0_4px_20px_rgba(0,0,0,0.3)] active:scale-[0.99]`}
                   >
@@ -293,14 +296,16 @@ function PhaseCard({ phase, index, isOpen, onToggle }) {
                     <span className="text-sm font-medium leading-snug text-gray-200 flex-1">
                       {phase.number}.{i + 1} {sub.title}
                     </span>
-                    {/* Download hint — appears on hover */}
-                    <svg
-                      className={`shrink-0 w-3.5 h-3.5 ${phase.numberColor} opacity-0 group-hover/item:opacity-100 transition-opacity duration-200 -translate-y-0.5 group-hover/item:translate-y-0 transition-transform`}
-                      viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
-                    >
-                      <path d="M12 4v12M12 16l-4-4M12 16l4-4"/><path d="M4 20h16"/>
-                    </svg>
-                  </button>
+                    {/* Download icon — only if has url */}
+                    {sub.url && (
+                      <svg
+                        className={`shrink-0 w-3.5 h-3.5 ${phase.numberColor} opacity-0 group-hover/item:opacity-100 transition-opacity duration-200`}
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+                      >
+                        <path d="M12 4v12M12 16l-4-4M12 16l4-4"/><path d="M4 20h16"/>
+                      </svg>
+                    )}
+                  </a>
                 )
               ))}
             </div>
