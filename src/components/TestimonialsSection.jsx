@@ -15,14 +15,11 @@ function useInView(options = {}) {
 }
 
 // ─────────────────────────────────────────────────────────────
-//  CONFIG — cambia esto cuando tengas el número definitivo.
-//  Formato internacional SIN '+', sin espacios. Ej. España: 34XXXXXXXXX
-const WHATSAPP_NUMBER = '34600000000';
-const WHATSAPP_MESSAGE = 'Hola AdelinBTC, acabo de terminar el Master y quiero dejarte mi reseña:';
-const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+//  CONFIG
+const INSTAGRAM_URL = 'https://www.instagram.com/adelinbtc';
 
 // ─────────────────────────────────────────────────────────────
-//  RESEÑAS REALES — añade aquí las que te lleguen por WhatsApp.
+//  RESEÑAS REALES — añade aquí las que te lleguen por Instagram.
 //  Mientras esté vacío, se muestra el estado "aún no hay reseñas".
 //  Plantilla de cada reseña:
 //  {
@@ -45,9 +42,11 @@ const Stars = ({ rating = 5 }) => (
   </div>
 );
 
-const WhatsAppIcon = ({ size = 18 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.886 9.885M20.52 3.449C18.24 1.245 15.24.044 12.045.044 5.463.044.104 5.401.101 11.986c0 2.096.549 4.142 1.595 5.945L0 24l6.305-1.654a11.962 11.962 0 005.715 1.456h.005c6.585 0 11.946-5.357 11.948-11.945a11.9 11.9 0 00-3.503-8.464"/>
+const InstagramIcon = ({ size = 18 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
   </svg>
 );
 
@@ -68,9 +67,9 @@ const TestimonialCard = ({ t, delay }) => {
           </div>
           <div>
             <div className="text-white font-bold text-sm">{t.name}</div>
-            <div className="inline-flex items-center gap-1 text-[0.65rem] font-bold text-emerald-500 uppercase tracking-wide">
-              <WhatsAppIcon size={11} />
-              Reseña por WhatsApp
+            <div className="inline-flex items-center gap-1 text-[0.65rem] font-bold text-pink-400 uppercase tracking-wide">
+              <InstagramIcon size={11} />
+              Reseña por Instagram
             </div>
           </div>
         </div>
@@ -94,15 +93,16 @@ const TestimonialCard = ({ t, delay }) => {
   );
 };
 
-const WhatsAppCTA = ({ compact = false }) => (
+const InstagramCTA = ({ compact = false }) => (
   <a
-    href={whatsappLink}
+    href={INSTAGRAM_URL}
     target="_blank"
     rel="noopener noreferrer"
-    className={`group inline-flex items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#1ebe5a] text-white font-bold rounded-full transition-all duration-300 hover:scale-[1.03] active:scale-[0.97] shadow-[0_8px_24px_rgba(37,211,102,0.3)] ${compact ? 'text-sm px-6 py-3' : 'text-base px-8 py-4'}`}
+    className={`group btn-instagram btn-special-glow inline-flex items-center justify-center gap-2.5 text-white font-bold rounded-full transition-all duration-300 active:scale-[0.97] relative overflow-hidden ${compact ? 'text-sm px-6 py-3' : 'text-base px-8 py-4'}`}
   >
-    <WhatsAppIcon size={compact ? 16 : 20} />
-    Deja tu reseña por WhatsApp
+    <InstagramIcon size={compact ? 16 : 20} className="relative z-10" />
+    <span className="relative z-10">Deja tu reseña por Instagram</span>
+    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent -translate-x-full animate-[shimmer_2.5s_infinite]"></div>
   </a>
 );
 
@@ -136,7 +136,7 @@ const TestimonialsSection = () => {
 
           <p className="text-gray-500 text-lg max-w-lg mx-auto leading-relaxed">
             {hasReviews
-              ? 'Reseñas reales de alumnos que ya tienen el Master, enviadas directamente por WhatsApp.'
+              ? 'Reseñas reales de alumnos que ya tienen el Master, enviadas directamente por Instagram.'
               : 'Opiniones 100% reales de alumnos verificados. Si ya tienes el Master, comparte la tuya.'}
           </p>
         </div>
@@ -153,7 +153,7 @@ const TestimonialsSection = () => {
             {/* Bottom CTA */}
             <div className="mt-12 text-center">
               <p className="text-gray-500 text-sm mb-4">¿Ya tienes el Master? Tu opinión ayuda a otros traders.</p>
-              <WhatsAppCTA compact />
+              <InstagramCTA compact />
             </div>
           </>
         ) : (
@@ -167,13 +167,13 @@ const TestimonialsSection = () => {
                 boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.04), 0 20px 60px rgba(0,0,0,0.4)',
               }}
             >
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-[1px] bg-gradient-to-r from-transparent via-[#25D366]/40 to-transparent" />
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-[1px] bg-gradient-to-r from-transparent via-pink-500/40 to-transparent" />
 
               {/* Icon */}
               <div className="relative inline-flex mb-6">
-                <div className="absolute inset-0 rounded-full bg-[#25D366]/20 blur-xl scale-150 animate-glow-pulse" />
-                <div className="relative w-16 h-16 rounded-full bg-[#25D366]/15 border border-[#25D366]/30 flex items-center justify-center text-[#25D366] shadow-[0_0_30px_rgba(37,211,102,0.2)]">
-                  <WhatsAppIcon size={28} />
+                <div className="absolute inset-0 rounded-full bg-pink-500/20 blur-xl scale-150 animate-glow-pulse" />
+                <div className="relative w-16 h-16 rounded-full bg-pink-500/15 border border-pink-500/30 flex items-center justify-center text-pink-400 shadow-[0_0_30px_rgba(236,72,153,0.2)]">
+                  <InstagramIcon size={28} />
                 </div>
               </div>
 
@@ -181,10 +181,10 @@ const TestimonialsSection = () => {
                 Sé de los primeros en opinar
               </h3>
               <p className="text-gray-400 text-base max-w-md mx-auto leading-relaxed mb-8">
-                El Master es reciente y estamos recogiendo las primeras reseñas. Cuando termines el tuyo, mándame tu opinión por WhatsApp y la publicaremos aquí — <strong className="text-white">solo reseñas reales de alumnos verificados</strong>.
+                El Master es reciente y estamos recogiendo las primeras reseñas. Cuando termines el tuyo, mándame tu opinión por Instagram y la publicaremos aquí — <strong className="text-white">solo reseñas reales de alumnos verificados</strong>.
               </p>
 
-              <WhatsAppCTA />
+              <InstagramCTA />
 
               <p className="text-gray-600 text-xs mt-5">
                 Respuesta directa de AdelinBTC · Sin bots

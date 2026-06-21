@@ -7,6 +7,7 @@ import VideoSection from './components/VideoSection';
 import ContactSection from './components/ContactSection';
 import ActualidadCripto from './pages/ActualidadCripto';
 import EmpiezaAqui from './pages/EmpiezaAqui';
+import Herramientas from './pages/Herramientas';
 import ActualidadCTA from './components/ActualidadCTA';
 import HowItWorks from './components/HowItWorks';
 import Navbar from './components/Navbar';
@@ -17,7 +18,6 @@ import FAQSection from './components/FAQSection';
 import StickyBuyBar from './components/StickyBuyBar';
 import ScrollProgress from './components/ScrollProgress';
 import LatestPostsSection from './components/LatestPostsSection';
-import FloatingContact from './components/FloatingContact';
 
 function HomePage() {
   return (
@@ -42,7 +42,6 @@ function HomePage() {
       <VideoSection />
       <ContactSection />
       <StickyBuyBar />
-      <FloatingContact />
       
       {/* Footer */}
       <footer className="py-12 md:py-16 pb-28 md:pb-28 border-t border-white/[0.04] text-center bg-[#060608] relative mt-10">
@@ -86,6 +85,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/empieza" element={<EmpiezaAqui />} />
         <Route path="/actualidad" element={<ActualidadCripto />} />
+        <Route path="/herramientas" element={<Herramientas />} />
       </Routes>
     </div>
   );

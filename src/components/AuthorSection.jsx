@@ -47,7 +47,7 @@ const AuthorSection = () => {
             </div>
             {/* Floating badge */}
             <div className="absolute -bottom-4 -right-4 bg-gradient-to-br from-orange-500 to-amber-500 text-white px-4 py-2 rounded-2xl text-xs font-black uppercase tracking-wider shadow-[0_8px_24px_rgba(255,153,0,0.4)]">
-              Trader Profesional
+              AdelinBTC
             </div>
           </div>
 

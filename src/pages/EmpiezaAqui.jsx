@@ -133,7 +133,7 @@ const steps = [
         href: 'https://www.instagram.com/adelinbtc',
         external: true,
         primary: false,
-        overrideClass: "group inline-flex items-center justify-center gap-2 sm:gap-3 text-white font-bold text-[0.85rem] sm:text-lg px-4 sm:px-10 py-3.5 sm:py-4 rounded-full transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_10px_40px_rgba(214,36,159,0.5)] active:scale-[0.98] w-full max-w-[320px] relative overflow-hidden"
+        overrideClass: "group btn-instagram inline-flex items-center justify-center gap-2 sm:gap-3 text-white font-bold text-[0.85rem] sm:text-lg px-6 sm:px-8 py-3.5 sm:py-4 rounded-full transition-all duration-300 active:scale-[0.98] w-full max-w-[380px] relative overflow-hidden"
       },
     ],
     borderColor: 'border-red-500/20',
@@ -363,8 +363,7 @@ const EmpiezaAqui = () => {
                 href="https://www.instagram.com/adelinbtc"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center justify-center gap-2 sm:gap-3 text-white font-bold text-[0.85rem] sm:text-lg px-4 sm:px-10 py-3.5 sm:py-4 rounded-full transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_10px_40px_rgba(214,36,159,0.5)] active:scale-[0.98] w-full max-w-[320px] relative overflow-hidden"
-                style={{ background: 'linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)' }}
+                className="group btn-instagram inline-flex items-center justify-center gap-2 sm:gap-3 text-white font-bold text-[0.85rem] sm:text-lg px-6 sm:px-8 py-3.5 sm:py-4 rounded-full transition-all duration-300 active:scale-[0.98] w-full max-w-[380px] relative overflow-hidden"
               >
                 <span className="relative z-10 text-white drop-shadow-md leading-tight text-center">Escríbeme por Instagram</span>
                 <svg className="relative z-10 transition-transform duration-300 group-hover:scale-110" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

@@ -64,6 +64,12 @@ const Navbar = () => {
           >
             Aprende Gratis
           </Link>
+          <Link
+            to="/herramientas"
+            className={`text-[0.85rem] font-semibold px-5 py-2.5 rounded-full transition-all duration-300 ${location.pathname === '/herramientas' ? 'bg-white/10 text-white shadow-inner' : 'text-gray-400 hover:text-white hover:bg-white/[0.04]'}`}
+          >
+            Herramientas
+          </Link>
           <div className="w-px h-5 bg-gradient-to-b from-transparent via-white/20 to-transparent mx-1"></div>
           <Link 
             to="/empieza" 
@@ -89,11 +95,6 @@ const Navbar = () => {
             <a href="https://www.youtube.com/@AdelinBTC?sub_confirmation=1" target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full bg-[#ff0000]/20 border border-[#ff0000]/30 text-red-400 hover:bg-[#ff0000] hover:border-[#ff0000] hover:text-white hover:shadow-[0_4px_15px_rgba(255,0,0,0.5)] transition-all duration-300 group">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none" className="group-hover:scale-110 transition-transform duration-300">
                 <path d="M21.582 6.186a2.684 2.684 0 0 0-1.884-1.895C17.985 3.843 12 3.843 12 3.843s-5.985 0-7.698.448A2.684 2.684 0 0 0 2.418 6.186C2 7.904 2 12 2 12s0 4.096.418 5.814a2.684 2.684 0 0 0 1.884 1.895c1.713.448 7.698.448 7.698.448s5.985 0 7.698-.448a2.684 2.684 0 0 0 1.884-1.895C22 16.096 22 12 22 12s0-4.096-.418-5.814zM9.912 15.352V8.648L15.688 12l-5.776 3.352z"/>
-              </svg>
-            </a>
-            <a href="https://wa.me/34600000000?text=Hola%20AdelinBTC%2C%20tengo%20una%20pregunta%20sobre%20el%20Master%20Cripto%3A" target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full bg-[#25D366]/20 border border-[#25D366]/30 text-[#25D366] hover:bg-[#25D366] hover:border-[#25D366] hover:text-white hover:shadow-[0_4px_15px_rgba(37,211,102,0.5)] transition-all duration-300 group">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" className="group-hover:scale-110 transition-transform duration-300">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.886 9.885M20.52 3.449C18.24 1.245 15.24.044 12.045.044 5.463.044.104 5.401.101 11.986c0 2.096.549 4.142 1.595 5.945L0 24l6.305-1.654a11.962 11.962 0 005.715 1.456h.005c6.585 0 11.946-5.357 11.948-11.945a11.9 11.9 0 00-3.503-8.464"/>
               </svg>
             </a>
           </div>
@@ -162,6 +163,13 @@ const Navbar = () => {
           >
             Aprende Gratis
           </Link>
+          <Link
+            to="/herramientas"
+            onClick={closeMobileMenu}
+            className={`px-4 py-3 rounded-xl text-[0.95rem] font-medium transition-all ${location.pathname === '/herramientas' ? 'bg-white/10 text-white shadow-inner border border-white/5' : 'text-gray-400 hover:text-white hover:bg-white/[0.03]'}`}
+          >
+            Herramientas
+          </Link>
           
           <div className="my-2 h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
           
@@ -189,11 +197,6 @@ const Navbar = () => {
             <a href="https://www.youtube.com/@AdelinBTC?sub_confirmation=1" target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full bg-[#ff0000]/20 border border-[#ff0000]/30 text-red-400 hover:bg-[#ff0000] hover:border-transparent hover:text-white transition-all">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
                 <path d="M21.582 6.186a2.684 2.684 0 0 0-1.884-1.895C17.985 3.843 12 3.843 12 3.843s-5.985 0-7.698.448A2.684 2.684 0 0 0 2.418 6.186C2 7.904 2 12 2 12s0 4.096.418 5.814a2.684 2.684 0 0 0 1.884 1.895c1.713.448 7.698.448 7.698.448s5.985 0 7.698-.448a2.684 2.684 0 0 0 1.884-1.895C22 16.096 22 12 22 12s0-4.096-.418-5.814zM9.912 15.352V8.648L15.688 12l-5.776 3.352z"/>
-              </svg>
-            </a>
-            <a href="https://wa.me/34600000000?text=Hola%20AdelinBTC%2C%20tengo%20una%20pregunta%20sobre%20el%20Master%20Cripto%3A" target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full bg-[#25D366]/20 border border-[#25D366]/30 text-[#25D366] hover:bg-[#25D366] hover:border-transparent hover:text-white transition-all">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.886 9.885M20.52 3.449C18.24 1.245 15.24.044 12.045.044 5.463.044.104 5.401.101 11.986c0 2.096.549 4.142 1.595 5.945L0 24l6.305-1.654a11.962 11.962 0 005.715 1.456h.005c6.585 0 11.946-5.357 11.948-11.945a11.9 11.9 0 00-3.503-8.464"/>
               </svg>
             </a>
           </div>

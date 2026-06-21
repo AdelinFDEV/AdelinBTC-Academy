@@ -190,7 +190,7 @@ const Hero = () => {
           {/* Benefits — compact 2×2 grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full mb-8">
             {benefits.map((b, i) => (
-              <div key={i} className={`group/benefit flex items-start gap-3 p-3.5 rounded-xl bg-white/[0.03] border border-white/[0.07] hover:bg-white/[0.05] hover:border-white/[0.12] hover:-translate-y-0.5 hover:scale-[1.02] transition-all duration-300 text-left`}>
+              <div key={i} className={`group/benefit flex items-start gap-3 p-3.5 rounded-xl bg-white/[0.07] backdrop-blur-md border border-white/10 hover:bg-white/[0.12] hover:border-white/20 hover:-translate-y-0.5 hover:scale-[1.02] transition-all duration-300 text-left`}>
                 <div className={`shrink-0 w-8 h-8 rounded-lg flex items-center justify-center border ${b.bg} ${b.color} transition-all duration-300 group-hover/benefit:scale-110 group-hover/benefit:drop-shadow-[0_0_8px_currentColor]`}>
                   {b.icon}
                 </div>
@@ -203,8 +203,8 @@ const Hero = () => {
           </div>
 
           {/* ── Conversion block ── */}
-          <div className="w-full bg-gradient-to-br from-orange-500/[0.08] via-[#060608]/0 to-transparent border border-orange-500/20 rounded-2xl p-5 mb-5 relative overflow-hidden">
-            <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-orange-500/40 to-transparent" />
+          <div className="w-full bg-gradient-to-br from-orange-500/[0.15] via-white/[0.06] to-transparent backdrop-blur-lg border border-orange-500/35 rounded-2xl p-5 mb-5 relative overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.4)]">
+            <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-orange-500/50 to-transparent" />
 
             {/* Price row */}
             <div className="flex items-center justify-between mb-4 flex-wrap gap-3">

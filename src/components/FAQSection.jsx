@@ -151,8 +151,7 @@ const FAQSection = () => {
             href="https://www.instagram.com/adelinbtc"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-white font-bold text-sm px-6 py-3 rounded-full hover:shadow-[0_10px_30px_rgba(214,36,159,0.4)] transition-all duration-300 hover:scale-[1.03]"
-            style={{ background: 'linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)' }}
+            className="btn-instagram inline-flex items-center gap-2 text-white font-bold text-sm px-6 py-3 rounded-full transition-all duration-300"
           >
             Pregúntame por Instagram
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
