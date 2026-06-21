@@ -147,7 +147,7 @@ const Hero = () => {
       <div className="absolute bottom-0 left-[5%] w-[300px] h-[300px] bg-amber-600/[0.05] rounded-full blur-[120px] -z-10 animate-float" style={{ animationDelay: '3s' }} />
 
       {/* ── Content ── */}
-      <div className="flex-1 max-w-6xl mx-auto px-4 pt-10 pb-14 lg:pt-14 lg:pb-20 flex flex-col lg:flex-row items-center gap-8 lg:gap-20 relative z-10 w-full">
+      <div className="flex-1 max-w-7xl mx-auto px-4 pt-10 pb-14 lg:pt-14 lg:pb-20 flex flex-col lg:flex-row items-center gap-8 lg:gap-12 relative z-10 w-full">
 
         {/* ══ LEFT COLUMN ══ */}
         <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left max-w-[580px]">
@@ -290,7 +290,7 @@ const Hero = () => {
         </div>
 
         {/* ══ RIGHT COLUMN ══ */}
-        <div className="flex-1 relative flex items-center justify-center w-full max-w-[320px] sm:max-w-[400px] lg:max-w-[520px] pb-16 lg:pb-0">
+        <div className="relative flex items-center justify-center w-full max-w-[340px] sm:max-w-[420px] lg:w-[42%] lg:max-w-none shrink-0 pb-16 lg:pb-0">
 
           {/* Outer glow ring */}
           <div className="absolute inset-0 bg-orange-500/[0.08] rounded-full blur-[100px] pointer-events-none" />
