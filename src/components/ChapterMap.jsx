@@ -483,83 +483,52 @@ const ChapterMap = () => {
               </div>
             </div>
 
-            <h4 className="text-xl md:text-2xl font-extrabold text-white mb-2 tracking-tight">Contenido Premium</h4>
-            <p className="text-gray-400 text-sm mb-4 max-w-md leading-relaxed">
-              Más de 12 capítulos diferentes con explicaciones sencillas, gráficos y ejemplos para que sin importar tu nivel entiendas todo el material.
+            <h4 className="text-lg font-bold text-white mb-1 tracking-tight">Contenido Premium</h4>
+            <p className="text-gray-500 text-xs mb-5 max-w-xs leading-relaxed">
+              +12 capítulos avanzados · 120 páginas · actualizaciones gratis de por vida
             </p>
 
             {/* Module pills */}
-            <div className="flex flex-wrap justify-center gap-2.5 mb-6 max-w-lg">
-              <span className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-full bg-white/[0.05] border border-white/[0.09] text-gray-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
-                <PhaseIcon id="foundation" className="w-3.5 h-3.5 text-orange-400/70" />
-                +120 Páginas de contenido dedicado
-              </span>
-              <span className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-full bg-white/[0.05] border border-white/[0.09] text-gray-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
-                <PhaseIcon id="gem" className="w-3.5 h-3.5 text-amber-400/70" />
-                Cómo Cazar Gemas antes que nadie
-              </span>
-              <span className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-full bg-white/[0.05] border border-white/[0.09] text-gray-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
-                <PhaseIcon id="strategy" className="w-3.5 h-3.5 text-blue-400/70" />
-                Estrategia Rentable de Trading
-              </span>
-              <span className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-full bg-white/[0.05] border border-white/[0.09] text-gray-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
-                <PhaseIcon id="journal" className="w-3.5 h-3.5 text-emerald-400/70" />
-                Diario De Trading Profesional
-              </span>
-              <span className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-full bg-white/[0.05] border border-white/[0.09] text-gray-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
-                <PhaseIcon id="chart" className="w-3.5 h-3.5 text-rose-400/70" />
-                Estrategia Spot Para Ganar Dinero En Mercados Bajistas 98%
-              </span>
-              <span className="inline-flex items-center gap-1.5 text-xs font-black px-3.5 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/35 text-orange-400 shadow-[0_0_12px_rgba(249,115,22,0.15)] uppercase tracking-wider animate-pulse">
-                🔥 El PDF se actualiza constantemente sin más pagos
-              </span>
+            <div className="flex flex-wrap justify-center gap-2 mb-5 max-w-sm">
+              {[
+                { icon: 'gem',        color: 'text-amber-400/70',   label: 'Cazar Gemas x10' },
+                { icon: 'psychology', color: 'text-purple-400/70',  label: 'Psicología Avanzada' },
+                { icon: 'strategy',   color: 'text-blue-400/70',    label: 'Estrategia de Trading' },
+                { icon: 'exit',       color: 'text-rose-400/70',    label: 'Ganancias Pasivas' },
+              ].map((p) => (
+                <span key={p.icon} className="inline-flex items-center gap-1.5 text-[0.7rem] font-semibold px-2.5 py-1 rounded-full bg-white/[0.04] border border-white/[0.07] text-gray-400">
+                  <PhaseIcon id={p.icon} className={`w-3 h-3 ${p.color}`} />
+                  {p.label}
+                </span>
+              ))}
             </div>
 
             {/* CTA Button */}
-            <div className="flex flex-col items-center gap-3">
+            <div className="flex flex-col items-center gap-2.5">
               <a
                 href="#buy"
-                className="btn-main-cta group relative inline-flex items-center gap-3 text-white font-black text-base md:text-lg py-5 px-10 rounded-xl overflow-hidden transition-all duration-300 active:scale-[0.98] tracking-wider"
-                style={{
-                  background: 'linear-gradient(135deg, #f97316 0%, #f59e0b 50%, #f97316 100%)',
-                  backgroundSize: '200% 100%',
-                }}
+                className="group relative inline-flex items-center gap-2 text-white font-bold text-sm py-3 px-7 rounded-full overflow-hidden transition-all duration-300 hover:scale-[1.04] active:scale-[0.97] shadow-[0_4px_20px_rgba(249,115,22,0.35)]"
+                style={{ background: 'linear-gradient(135deg, #f97316 0%, #f59e0b 100%)' }}
               >
-                {/* Animated shimmer */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/35 to-transparent -translate-x-full animate-[shimmer_2s_infinite]" />
-
-                {/* Icon left */}
-                <span className="relative z-10 flex items-center justify-center w-8 h-8 rounded-xl bg-white/20 shrink-0">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 4L12 20M12 20L18 14M12 20L6 14"/>
-                  </svg>
-                </span>
-
-                <span className="relative z-10 flex flex-col items-start leading-tight">
-                  <span className="text-base md:text-lg font-black">Descargar Master Completo</span>
-                  <span className="text-[0.7rem] font-semibold text-orange-100/80 tracking-wide">PDF completo · Acceso inmediato</span>
-                </span>
-
-                {/* Arrow right */}
-                <svg className="relative z-10 ml-1 group-hover:translate-x-1 transition-transform duration-300 shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent -translate-x-full animate-[shimmer_2.5s_infinite]" />
+                <span className="relative z-10">Descargar Master — 79€</span>
+                <svg className="relative z-10 group-hover:translate-x-0.5 transition-transform duration-300" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M5 12h14M13 6l6 6-6 6"/>
                 </svg>
               </a>
-
-              {/* Trust micro-copy */}
-              <div className="flex items-center gap-4 text-[0.68rem] text-gray-600 font-medium">
+              <div className="flex items-center gap-3 text-[0.65rem] text-gray-600 font-medium">
                 <span className="flex items-center gap-1">
-                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-emerald-500"><polyline points="20 6 9 17 4 12"/></svg>
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-emerald-500"><polyline points="20 6 9 17 4 12"/></svg>
                   Pago seguro
                 </span>
-                <span className="w-px h-3 bg-white/10" />
+                <span className="w-px h-2.5 bg-white/10" />
                 <span className="flex items-center gap-1">
-                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-emerald-500"><polyline points="20 6 9 17 4 12"/></svg>
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-emerald-500"><polyline points="20 6 9 17 4 12"/></svg>
                   Garantía 7 días
                 </span>
-                <span className="w-px h-3 bg-white/10" />
+                <span className="w-px h-2.5 bg-white/10" />
                 <span className="flex items-center gap-1">
-                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-emerald-500"><polyline points="20 6 9 17 4 12"/></svg>
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-emerald-500"><polyline points="20 6 9 17 4 12"/></svg>
                   Actualizaciones gratis
                 </span>
               </div>
