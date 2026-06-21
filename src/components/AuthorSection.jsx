@@ -15,10 +15,10 @@ function useInView(options = {}) {
 }
 
 const stats = [
-  { value: '5+', label: 'Años en el mercado' },
-  { value: '15K+', label: 'Seguidores en redes' },
-  { value: '200+', label: 'Alumnos formados' },
-  { value: '97%', label: 'Satisfacción garantizada' },
+  { value: '+8', label: 'Años de experiencia' },
+  { value: '17K+', label: 'Seguidores en redes' },
+  { value: '26', label: 'Alumnos reales cualificados' },
+  { value: '100%', label: 'De satisfacción' },
 ];
 
 const AuthorSection = () => {
@@ -65,7 +65,7 @@ const AuthorSection = () => {
 
             <div className="space-y-4 text-gray-400 text-[1rem] md:text-lg leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
               <p>
-                Llevo <strong className="text-white">más de 5 años</strong> operando en el mercado de criptomonedas. He pasado por todo: las euforia del bull run, la sangre del bear market, y los errores que le cuestan dinero real a la gente.
+                Llevo <strong className="text-white">más de 8 años</strong> operando en el mercado de criptomonedas. He pasado por todo: las euforia del bull run, la sangre del bear market, y los errores que le cuestan dinero real a la gente.
               </p>
               <p>
                 Toda esa experiencia —estrategias, sistemas, errores y aciertos— está condensada en <strong className="text-orange-400">AdelinBTC: Master Cripto Definitivo</strong>. No es teoría sacada de internet. Es el manual que yo hubiera querido tener cuando empecé.
@@ -92,9 +92,9 @@ const AuthorSection = () => {
                 href="https://www.youtube.com/@AdelinBTC?sub_confirmation=1"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#ff0000]/10 border border-[#ff0000]/20 text-red-400 font-bold text-sm px-5 py-2.5 rounded-full hover:bg-[#ff0000]/20 transition-all duration-300"
+                className="inline-flex items-center gap-2.5 bg-red-600/10 border border-red-500/35 text-red-400 font-bold text-sm px-6 py-3 rounded-full hover:bg-gradient-to-r hover:from-red-600 hover:to-rose-600 hover:border-transparent hover:text-white shadow-[0_0_15px_rgba(239,68,68,0.1)] hover:shadow-[0_0_25px_rgba(239,68,68,0.5)] transition-all duration-300 transform hover:-translate-y-0.5 group"
               >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="group-hover:scale-110 transition-transform duration-300">
                   <path d="M21.582 6.186a2.684 2.684 0 0 0-1.884-1.895C17.985 3.843 12 3.843 12 3.843s-5.985 0-7.698.448A2.684 2.684 0 0 0 2.418 6.186C2 7.904 2 12 2 12s0 4.096.418 5.814a2.684 2.684 0 0 0 1.884 1.895c1.713.448 7.698.448 7.698.448s5.985 0 7.698-.448a2.684 2.684 0 0 0 1.884-1.895C22 16.096 22 12 22 12s0-4.096-.418-5.814zM9.912 15.352V8.648L15.688 12l-5.776 3.352z"/>
                 </svg>
                 Ver canal de YouTube
@@ -103,9 +103,9 @@ const AuthorSection = () => {
                 href="https://www.instagram.com/adelinbtc"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-pink-500/10 border border-pink-500/20 text-pink-400 font-bold text-sm px-5 py-2.5 rounded-full hover:bg-pink-500/20 transition-all duration-300"
+                className="inline-flex items-center gap-2.5 bg-pink-500/10 border border-pink-500/35 text-pink-400 font-bold text-sm px-6 py-3 rounded-full hover:bg-gradient-to-tr hover:from-yellow-500 hover:via-pink-500 hover:to-purple-600 hover:border-transparent hover:text-white shadow-[0_0_15px_rgba(236,72,153,0.1)] hover:shadow-[0_0_25px_rgba(236,72,153,0.5)] transition-all duration-300 transform hover:-translate-y-0.5 group"
               >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:scale-110 transition-transform duration-300">
                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
                 </svg>
                 Escríbeme por Instagram

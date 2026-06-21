@@ -85,15 +85,15 @@ const Navbar = () => {
           
           {/* Social Icons (Premium Buttons) - Hidden on very small screens */}
           <div className="hidden sm:flex items-center gap-3">
-            <a href="https://www.instagram.com/adelinbtc" target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-tr from-yellow-500/20 via-pink-500/20 to-purple-600/20 border border-pink-500/30 text-pink-400 hover:from-yellow-500 hover:via-pink-500 hover:to-purple-600 hover:border-transparent hover:text-white hover:shadow-[0_4px_15px_rgba(236,72,153,0.5)] transition-all duration-300 group">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:scale-110 transition-transform duration-300">
+            <a href="https://www.instagram.com/adelinbtc" target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-tr from-yellow-500/20 via-pink-500/25 to-purple-600/20 border border-pink-500/50 text-pink-400 hover:from-yellow-500 hover:via-pink-500 hover:to-purple-600 hover:border-transparent hover:text-white shadow-[0_0_10px_rgba(236,72,153,0.15)] hover:shadow-[0_0_20px_rgba(236,72,153,0.6)] transition-all duration-300 group">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:scale-110 transition-transform duration-300 drop-shadow-[0_0_4px_rgba(236,72,153,0.4)]">
                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
               </svg>
             </a>
-            <a href="https://www.youtube.com/@AdelinBTC?sub_confirmation=1" target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full bg-[#ff0000]/20 border border-[#ff0000]/30 text-red-400 hover:bg-[#ff0000] hover:border-[#ff0000] hover:text-white hover:shadow-[0_4px_15px_rgba(255,0,0,0.5)] transition-all duration-300 group">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none" className="group-hover:scale-110 transition-transform duration-300">
+            <a href="https://www.youtube.com/@AdelinBTC?sub_confirmation=1" target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full bg-red-600/20 border border-red-500/50 text-red-400 hover:bg-red-600 hover:border-red-600 hover:text-white shadow-[0_0_10px_rgba(239,68,68,0.15)] hover:shadow-[0_0_20px_rgba(239,68,68,0.6)] transition-all duration-300 group">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none" className="group-hover:scale-110 transition-transform duration-300 drop-shadow-[0_0_4px_rgba(239,68,68,0.4)]">
                 <path d="M21.582 6.186a2.684 2.684 0 0 0-1.884-1.895C17.985 3.843 12 3.843 12 3.843s-5.985 0-7.698.448A2.684 2.684 0 0 0 2.418 6.186C2 7.904 2 12 2 12s0 4.096.418 5.814a2.684 2.684 0 0 0 1.884 1.895c1.713.448 7.698.448 7.698.448s5.985 0 7.698-.448a2.684 2.684 0 0 0 1.884-1.895C22 16.096 22 12 22 12s0-4.096-.418-5.814zM9.912 15.352V8.648L15.688 12l-5.776 3.352z"/>
               </svg>
             </a>
@@ -187,15 +187,15 @@ const Navbar = () => {
         <div className="px-6 pb-8 pt-4">
           <p className="text-xs text-gray-500 mb-4 uppercase tracking-wider font-semibold">Síguenos</p>
           <div className="flex items-center gap-4">
-            <a href="https://www.instagram.com/adelinbtc" target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-tr from-yellow-500/20 via-pink-500/20 to-purple-600/20 border border-pink-500/30 text-pink-400 hover:from-yellow-500 hover:via-pink-500 hover:to-purple-600 hover:border-transparent hover:text-white transition-all">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <a href="https://www.instagram.com/adelinbtc" target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-tr from-yellow-500/20 via-pink-500/25 to-purple-600/20 border border-pink-500/50 text-pink-400 hover:from-yellow-500 hover:via-pink-500 hover:to-purple-600 hover:border-transparent hover:text-white shadow-[0_0_10px_rgba(236,72,153,0.15)] hover:shadow-[0_0_20px_rgba(236,72,153,0.6)] transition-all duration-300">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="drop-shadow-[0_0_4px_rgba(236,72,153,0.4)]">
                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
               </svg>
             </a>
-            <a href="https://www.youtube.com/@AdelinBTC?sub_confirmation=1" target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full bg-[#ff0000]/20 border border-[#ff0000]/30 text-red-400 hover:bg-[#ff0000] hover:border-transparent hover:text-white transition-all">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+            <a href="https://www.youtube.com/@AdelinBTC?sub_confirmation=1" target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full bg-red-600/20 border border-red-500/50 text-red-400 hover:bg-red-600 hover:border-transparent hover:text-white shadow-[0_0_10px_rgba(239,68,68,0.15)] hover:shadow-[0_0_20px_rgba(239,68,68,0.6)] transition-all">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none" className="drop-shadow-[0_0_4px_rgba(239,68,68,0.4)]">
                 <path d="M21.582 6.186a2.684 2.684 0 0 0-1.884-1.895C17.985 3.843 12 3.843 12 3.843s-5.985 0-7.698.448A2.684 2.684 0 0 0 2.418 6.186C2 7.904 2 12 2 12s0 4.096.418 5.814a2.684 2.684 0 0 0 1.884 1.895c1.713.448 7.698.448 7.698.448s5.985 0 7.698-.448a2.684 2.684 0 0 0 1.884-1.895C22 16.096 22 12 22 12s0-4.096-.418-5.814zM9.912 15.352V8.648L15.688 12l-5.776 3.352z"/>
               </svg>
             </a>

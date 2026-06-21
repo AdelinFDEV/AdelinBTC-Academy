@@ -17,11 +17,11 @@ function useInView(options = {}) {
 const faqs = [
   {
     q: '¿Necesito experiencia previa en criptomonedas?',
-    a: 'No. El Master está diseñado para que cualquier persona, sin importar su nivel de partida, pueda seguirlo desde cero. Empezamos desde los conceptos más básicos y avanzamos progresivamente hasta estrategias institucionales. Si ya tienes experiencia, simplemente saltarás las partes que ya dominas.',
+    a: 'No. El Master está diseñado para que cualquier persona, sin importar su nivel de partida, pueda seguirlo desde cero. Empezamos desde los conceptos más básicos y avanzamos progresivamente hasta el nivel experto.',
   },
   {
     q: '¿Cómo recibo el PDF después de comprarlo?',
-    a: 'Inmediatamente después de completar el pago recibirás un enlace de descarga directa en tu correo. El PDF es tuyo para siempre — descárgalo en todos los dispositivos que necesites.',
+    a: 'Inmediatamente después de completar el pago recibirás un enlace de acceso directo a nuestra comunidad de Discord. El PDF lo encontrarás ahí, es tuyo para siempre — descárgalo en todos los dispositivos que necesites y avisaré de actualizaciones por Instagram y la propia comunidad de Discord.',
   },
   {
     q: '¿En qué formato está el Master? ¿Funciona en móvil?',
@@ -33,7 +33,7 @@ const faqs = [
   },
   {
     q: '¿Cuánto tiempo necesito para completar el Master?',
-    a: 'Depende de tu ritmo. El contenido está estructurado en 3 fases principales. Puedes consumirlo intensamente en una semana, o ir poco a poco aplicando cada sección. No hay fechas límite ni acceso que caduque.',
+    a: 'Depende de tu ritmo. El contenido está estructurado en decenas de fases principales. Puedes consumirlo intensamente en una semana, o ir poco a poco aplicando cada sección. No hay fechas límite ni acceso que caduque.',
   },
   {
     q: '¿Qué pasa si el Master no cumple mis expectativas?',
@@ -45,7 +45,7 @@ const faqs = [
   },
   {
     q: '¿Puedo contactar con AdelinBTC si tengo dudas después de comprarlo?',
-    a: 'Sí. Puedes escribirme directamente por WhatsApp y respondo personalmente a los alumnos con dudas sobre el contenido del Master.',
+    a: 'Sí. Puedes escribirme directamente por Instagram y respondo personalmente a los alumnos con dudas sobre el contenido del Master.',
   },
 ];
 

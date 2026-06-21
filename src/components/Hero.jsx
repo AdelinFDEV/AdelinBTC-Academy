@@ -47,8 +47,8 @@ const benefits = [
     ),
     color: 'text-fuchsia-400',
     bg: 'bg-fuchsia-500/10 border-fuchsia-500/20',
-    title: 'Masterclass VIP en PDF',
-    desc: 'El manual que evoluciona con el mercado real. Actualizaciones de por vida.',
+    title: 'Master Definitivo en PDF',
+    desc: 'El manual de referencia que evoluciona junto al mercado cripto real. Acceso ilimitado y actualizaciones de por vida para que nunca te quedes desactualizado.',
   },
   {
     icon: (
@@ -58,8 +58,8 @@ const benefits = [
     ),
     color: 'text-emerald-400',
     bg: 'bg-emerald-500/10 border-emerald-500/20',
-    title: 'Sistema Institucional',
-    desc: 'Estrategia de alta precisión para entrar sin depender del azar.',
+    title: 'Sistema Probado',
+    desc: 'Metodología institucional con reglas precisas de entrada y salida. Diseñada para operar con total certeza matemática eliminando el azar.',
   },
   {
     icon: (
@@ -70,7 +70,7 @@ const benefits = [
     color: 'text-yellow-400',
     bg: 'bg-yellow-500/10 border-yellow-500/20',
     title: 'Caza de Gemas x100',
-    desc: 'Filtros On-Chain para encontrar Altcoins explosivas antes que Binance.',
+    desc: 'Filtros avanzados y checklist de análisis técnico/fundamental en Altcoins para detectar proyectos de alta capitalización explosiva antes que el público general.',
   },
   {
     icon: (
@@ -81,7 +81,22 @@ const benefits = [
     color: 'text-orange-400',
     bg: 'bg-orange-500/10 border-orange-500/20',
     title: 'Diario del Francotirador',
-    desc: 'Gestión de riesgo institucional. Cero emociones, máximo control.',
+    desc: 'Bitácora y plantillas avanzadas de gestión de riesgo. Ejecución impecable sin emociones para blindar tu cartera en cada operación.',
+  },
+  {
+    icon: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+      </svg>
+    ),
+    color: 'text-cyan-400',
+    bg: 'bg-cyan-500/10 border-cyan-500/20',
+    title: '+100 Páginas de Contenido',
+    desc: (
+      <span>
+        Guía ilustrada con más de 15 capítulos prácticos, gráficos dinámicos y psicología de trading. <strong className="text-cyan-400 font-extrabold">¡Con actualizaciones gratuitas para siempre!</strong>
+      </span>
+    ),
   },
 ];
 
@@ -151,7 +166,7 @@ const Hero = () => {
           </div>
 
           {/* Pain hook */}
-          <p className="text-orange-400/80 text-sm font-semibold tracking-wide mb-3">
+          <p className="text-orange-400 text-sm font-bold tracking-wide mb-3 drop-shadow-[0_0_10px_rgba(251,146,60,0.55)]">
             Para traders que están cansados de perder dinero sin entender por qué →
           </p>
 
@@ -190,13 +205,13 @@ const Hero = () => {
           {/* Benefits — compact 2×2 grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full mb-8">
             {benefits.map((b, i) => (
-              <div key={i} className={`group/benefit flex items-start gap-3 p-3.5 rounded-xl bg-white/[0.07] backdrop-blur-md border border-white/10 hover:bg-white/[0.12] hover:border-white/20 hover:-translate-y-0.5 hover:scale-[1.02] transition-all duration-300 text-left`}>
+              <div key={i} className={`group/benefit flex items-start gap-3 p-3.5 rounded-xl bg-white/[0.07] backdrop-blur-md border border-white/10 hover:bg-white/[0.12] hover:border-white/20 hover:-translate-y-0.5 hover:scale-[1.02] transition-all duration-300 text-left ${i === 4 ? 'sm:col-span-2' : ''}`}>
                 <div className={`shrink-0 w-8 h-8 rounded-lg flex items-center justify-center border ${b.bg} ${b.color} transition-all duration-300 group-hover/benefit:scale-110 group-hover/benefit:drop-shadow-[0_0_8px_currentColor]`}>
                   {b.icon}
                 </div>
                 <div>
                   <div className="text-white font-bold text-[0.82rem] leading-tight mb-0.5">{b.title}</div>
-                  <div className="text-gray-500 text-[0.72rem] leading-snug">{b.desc}</div>
+                  <div className="text-zinc-300 text-[0.72rem] leading-snug">{b.desc}</div>
                 </div>
               </div>
             ))}
@@ -238,13 +253,13 @@ const Hero = () => {
             {/* CTA */}
             <a
               href="#buy"
-              className="group w-full flex items-center justify-center gap-3 bg-gradient-to-r from-orange-500 to-amber-400 text-white font-black text-lg py-4 px-8 rounded-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_12px_40px_rgba(255,153,0,0.45)] active:scale-[0.98] relative overflow-hidden mb-3"
+              className="btn-main-cta group w-full flex items-center justify-center gap-3 bg-gradient-to-r from-orange-500 via-amber-500 to-orange-500 text-white font-black text-xl py-5 px-10 rounded-xl transition-all duration-300 active:scale-[0.98] relative overflow-hidden mt-5 mb-4 tracking-wider"
             >
-              <svg className="relative z-10" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <svg className="relative z-10 animate-bounce" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M12 4L12 20M12 20L18 14M12 20L6 14"/>
               </svg>
-              <span className="relative z-10">Quiero el Master Ahora</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite]" />
+              <span className="relative z-10 drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">DESCARGAR AHORA</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/35 to-transparent -translate-x-full animate-[shimmer_2s_infinite]" />
             </a>
 
             {/* Trust micro-badges */}

@@ -114,7 +114,7 @@ const steps = [
     label: 'Comunidad',
     title: 'Sígueme y únete a la comunidad',
     description:
-      'No se trata solo de seguirme. Se trata de ser parte activa de una comunidad real donde resolvemos dudas, compartimos análisis en tiempo real y aprendemos juntos. WhatsApp y YouTube son el punto de partida para cualquier trader serio que quiera dar el salto.',
+      'No se trata solo de seguirme. Se trata de ser parte activa de una comunidad real donde resolvemos dudas, compartimos análisis en tiempo real y aprendemos juntos. Instagram y YouTube son el punto de partida para cualquier trader serio que quiera dar el salto.',
     pills: ['📲 Preguntas respondidas 1 a 1', '📊 Análisis semanales', '🔔 Alertas de mercado', '🤝 Comunidad privada'],
     ctas: [
       {
@@ -337,15 +337,18 @@ const EmpiezaAqui = () => {
               Cada paso de esta guía te acerca a operar con criterio propio. Toma acción ahora y evita los errores que arruinan al 90% de los principiantes.
             </p>
             <a
-              href={MEXC_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-400 hover:to-amber-400 text-white font-extrabold text-[0.95rem] px-8 py-4 rounded-full transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_40px_rgba(255,153,0,0.4)] active:scale-[0.98]"
+              href="/#buy"
+              className="btn-main-cta inline-flex items-center justify-center gap-3 text-white font-black text-[0.95rem] px-8 py-4 rounded-full relative overflow-hidden transition-all duration-300 active:scale-[0.98]"
+              style={{
+                background: 'linear-gradient(135deg, #f97316 0%, #f59e0b 50%, #f97316 100%)',
+                backgroundSize: '200% 100%',
+              }}
             >
-              Crear cuenta en MEXC
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
+              {/* Animated shimmer */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/35 to-transparent -translate-x-full animate-[shimmer_2s_infinite]" />
+              <span className="relative z-10">Comprar el PDF</span>
+              <svg className="relative z-10 animate-bounce" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 4L12 20M12 20L18 14M12 20L6 14"/>
               </svg>
             </a>
           </div>

@@ -18,8 +18,8 @@ const PhaseIcon = ({ id, className = '' }) => {
   const icons = {
     foundation: (
       <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-        <polyline points="9 22 9 12 15 12 15 22"/>
+        <circle cx="12" cy="12" r="3"/>
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
       </svg>
     ),
     strategy: (
@@ -75,21 +75,22 @@ const phases = [
     number: '01',
     iconId: 'foundation',
     label: 'Fase 1',
-    title: 'Los Cimientos del Dinero',
-    description: 'Entiende cómo se mueve el capital institucional y deja de perder dinero como el 90% de los novatos.',
+    title: 'Domina CoinMarketCap',
+    description: 'Entiende cómo leer correctamente los datos fundamentales de un token en CoinMarketCap y supera al 95% de personas que no prestan atención a esto.',
     color: 'orange',
-    border: 'border-orange-500/25',
-    bg: 'bg-orange-500/8',
-    glow: 'shadow-[0_0_40px_rgba(249,115,22,0.12)]',
-    glowHover: 'hover:shadow-[0_0_60px_rgba(249,115,22,0.2)]',
-    activeBorder: 'border-orange-500/50',
-    activeBg: 'from-orange-500/10 to-orange-600/5',
-    numberColor: 'text-orange-500',
+    border: 'border-orange-500/35',
+    bg: 'bg-orange-500/10',
+    glow: 'shadow-[0_0_45px_rgba(249,115,22,0.2)]',
+    glowHover: 'hover:shadow-[0_0_55px_rgba(249,115,22,0.35)] hover:border-orange-500/40',
+    activeBorder: 'border-orange-400',
+    activeBg: 'from-orange-500/15 via-orange-950/20 to-orange-950/5',
+    numberColor: 'text-orange-400',
     dotColor: 'bg-orange-500',
     lineColor: 'from-orange-500/60',
+    premiumCount: 9,
     subChapters: [
-      { title: 'La verdad que nadie te cuenta de Crypto', locked: false },
-      { title: 'Identificando el Ciclo de Mercado', locked: false },
+      { title: 'Cómo usar CoinMarketCap (sin que te la cuelen)', locked: false },
+      { title: 'Cómo leer la página de un token', locked: false },
       { title: 'Manipulación de las ballenas', locked: true },
       { title: 'Blindaje total de tus fondos', locked: true },
     ]
@@ -101,18 +102,19 @@ const phases = [
     title: 'Estrategia y Análisis de Tokens',
     description: 'Mi sistema paso a paso para analizar cualquier proyecto y descubrir su precio real antes de invertir.',
     color: 'blue',
-    border: 'border-blue-500/25',
-    bg: 'bg-blue-500/8',
-    glow: 'shadow-[0_0_40px_rgba(59,130,246,0.10)]',
-    glowHover: 'hover:shadow-[0_0_60px_rgba(59,130,246,0.18)]',
-    activeBorder: 'border-blue-500/50',
-    activeBg: 'from-blue-500/10 to-blue-600/5',
+    border: 'border-blue-500/35',
+    bg: 'bg-blue-500/10',
+    glow: 'shadow-[0_0_45px_rgba(59,130,246,0.18)]',
+    glowHover: 'hover:shadow-[0_0_55px_rgba(59,130,246,0.28)] hover:border-blue-500/40',
+    activeBorder: 'border-blue-400',
+    activeBg: 'from-blue-500/15 via-blue-950/20 to-blue-950/5',
     numberColor: 'text-blue-400',
     dotColor: 'bg-blue-500',
     lineColor: 'from-blue-500/60',
+    premiumCount: 7,
     subChapters: [
-      { title: 'Tokenomics: La trampa de la inflación', locked: false },
-      { title: 'Fuentes de información clasificada', locked: false },
+      { title: '¿Es posible que el token alcance ese precio?', locked: false },
+      { title: 'Red Flags al analizar un token', locked: false },
       { title: 'Proyección matemática del precio', locked: true },
       { title: 'Cuándo comprar y cuándo vender', locked: true },
     ]
@@ -124,18 +126,19 @@ const phases = [
     title: 'El Diario del Francotirador',
     description: 'Si no mides tus trades, estás apostando. Implementa mi sistema exacto de gestión de riesgo institucional.',
     color: 'emerald',
-    border: 'border-emerald-500/25',
-    bg: 'bg-emerald-500/8',
-    glow: 'shadow-[0_0_40px_rgba(16,185,129,0.10)]',
-    glowHover: 'hover:shadow-[0_0_60px_rgba(16,185,129,0.18)]',
-    activeBorder: 'border-emerald-500/50',
-    activeBg: 'from-emerald-500/10 to-emerald-600/5',
+    border: 'border-emerald-500/35',
+    bg: 'bg-emerald-500/10',
+    glow: 'shadow-[0_0_45px_rgba(16,185,129,0.18)]',
+    glowHover: 'hover:shadow-[0_0_55px_rgba(16,185,129,0.33)] hover:border-emerald-500/40',
+    activeBorder: 'border-emerald-400',
+    activeBg: 'from-emerald-500/15 via-emerald-950/20 to-emerald-950/5',
     numberColor: 'text-emerald-400',
     dotColor: 'bg-emerald-500',
     lineColor: 'from-emerald-500/60',
+    premiumCount: 12,
     subChapters: [
-      { title: 'Configurando tu Diario de Trading', locked: false },
-      { title: 'Psicología de acero: Cero emociones', locked: false },
+      { title: 'La regla del 1%', locked: false },
+      { title: 'Estrategia y Diario de Trading Profesional', locked: true, noBlur: true },
       { title: 'Cálculo de posición avanzado', locked: true },
       { title: 'Ratio Riesgo/Beneficio Asimétrico', locked: true },
     ]
@@ -221,7 +224,7 @@ function PhaseCard({ phase, index, isOpen, onToggle }) {
               </span>
               <span className="text-gray-700">·</span>
               <span className="inline-flex items-center gap-1 text-[0.65rem] font-bold text-gray-600">
-                🔒 {lockedCount} premium
+                🔒 {phase.premiumCount} premium
               </span>
             </div>
           </div>
@@ -255,13 +258,21 @@ function PhaseCard({ phase, index, isOpen, onToggle }) {
                 sub.locked ? (
                   <div
                     key={i}
-                    className="relative flex items-center gap-3 px-4 py-3 rounded-xl border bg-white/[0.01] border-white/[0.04] opacity-50"
+                    className="relative flex items-center justify-between gap-3 px-4 py-3 rounded-xl border border-white/[0.05] bg-white/[0.02] hover:border-amber-500/20 hover:bg-white/[0.04] transition-all duration-300 group/locked"
                   >
-                    <div className="shrink-0 w-6 h-6 rounded-lg flex items-center justify-center bg-white/[0.04] text-gray-600">
-                      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    <div className="flex items-center gap-3 min-w-0 flex-1">
+                      <div className="shrink-0 w-6 h-6 rounded-lg flex items-center justify-center bg-amber-500/10 border border-amber-500/20 text-amber-500 shadow-[0_0_8px_rgba(245,158,11,0.2)]">
+                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                          <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                        </svg>
+                      </div>
+                      <span className={`text-sm font-semibold leading-snug text-zinc-400 select-none break-words whitespace-normal ${sub.noBlur ? '' : 'blur-[3px]'}`}>
+                        {phase.number}.{i + 1} {sub.title}
+                      </span>
                     </div>
-                    <span className="text-sm font-medium leading-snug text-gray-600 blur-[2px] select-none">
-                      {phase.number}.{i + 1} {sub.title}
+                    <span className="shrink-0 text-[0.6rem] font-bold uppercase tracking-wider text-amber-500 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20 shadow-[0_0_6px_rgba(245,158,11,0.15)] animate-pulse">
+                      Premium
                     </span>
                   </div>
                 ) : (
@@ -329,21 +340,21 @@ const ChapterMap = () => {
             </span>
           </h2>
           <p className="text-gray-500 text-lg max-w-lg mx-auto leading-relaxed">
-            3 fases progresivas. Haz clic en cada fase para explorar las lecciones.
+            13 módulos progresivos. Haz clic en cada fase para explorar las lecciones gratuitas.
           </p>
 
           {/* Phase tracker */}
-          <div className="relative flex items-center justify-center gap-0 mt-10 max-w-sm mx-auto">
+          <div className="relative flex items-center justify-between mt-10 max-w-md mx-auto px-2 pb-8">
             {phases.map((p, i) => (
               <React.Fragment key={i}>
                 <button
                   onClick={() => setOpenPhase(openPhase === i ? null : i)}
-                  className={`relative flex flex-col items-center gap-1.5 px-3 transition-all duration-300 group/tracker`}
+                  className={`relative flex flex-col items-center transition-all duration-300 group/tracker z-10`}
                 >
                   <div className={`relative w-10 h-10 rounded-xl flex items-center justify-center border transition-all duration-300 overflow-hidden
                     ${openPhase === i
-                      ? `${p.bg} ${p.border} scale-110 ${p.glow}`
-                      : 'bg-white/[0.03] border-white/[0.08] group-hover/tracker:border-white/20 group-hover/tracker:bg-white/[0.06]'
+                      ? `${p.bg.replace('/10', '/20')} ${p.border.replace('/35', '/70')} scale-110 shadow-[0_0_15px_rgba(249,115,22,0.25)]`
+                      : 'bg-white/[0.04] border-white/[0.12] group-hover/tracker:border-white/30 group-hover/tracker:bg-white/[0.08]'
                     }`}>
                     {/* Perimeter sweep light */}
                     <div
@@ -351,23 +362,58 @@ const ChapterMap = () => {
                       style={{ animationDelay: `${i * 1}s` }}
                     />
                     {openPhase === i && (
-                      <div className={`absolute inset-0 opacity-40 blur-sm ${p.bg} animate-glow-pulse pointer-events-none`} />
+                      <div className={`absolute inset-0 opacity-50 blur-sm ${p.bg} animate-glow-pulse pointer-events-none`} />
                     )}
-                    <PhaseIcon id={p.iconId} className={`w-5 h-5 relative z-10 transition-all duration-300 ${
+                    <PhaseIcon id={p.iconId} className={`w-4 h-4 relative z-10 transition-all duration-300 ${
                       openPhase === i
-                        ? `${p.numberColor} drop-shadow-[0_0_6px_currentColor]`
-                        : 'text-gray-500 group-hover/tracker:text-gray-300'
+                        ? `${p.numberColor} drop-shadow-[0_0_8px_currentColor]`
+                        : 'text-gray-400 group-hover/tracker:text-white'
                     }`} />
                   </div>
-                  <span className={`text-[0.6rem] font-black uppercase tracking-wider transition-colors duration-300 ${openPhase === i ? p.numberColor : 'text-gray-600'}`}>
+                  {/* Absolute label to keep button height exactly 40px for perfect line alignment */}
+                  <span className={`absolute top-12 left-1/2 -translate-x-1/2 text-[0.62rem] font-bold uppercase tracking-wider transition-colors duration-300 whitespace-nowrap ${openPhase === i ? p.numberColor : 'text-gray-500 group-hover/tracker:text-white'}`}>
                     {p.label}
                   </span>
                 </button>
-                {i < phases.length - 1 && (
-                  <div className={`flex-1 h-px transition-all duration-500 ${openPhase > i ? 'bg-gradient-to-r from-white/20 to-white/5' : 'bg-white/[0.06]'}`}></div>
-                )}
+                
+                {/* Connector line between phase squares with a left-to-right loading animation */}
+                <div className="relative flex-1 h-[2px] min-w-[20px] mx-1">
+                  {/* Background line */}
+                  <div className="absolute inset-0 bg-white/[0.08]" />
+                  {/* Active line with left-to-right slide transition */}
+                  <div 
+                    className="absolute inset-y-0 left-0 bg-gradient-to-r from-orange-500 to-indigo-500 shadow-[0_0_8px_rgba(249,115,22,0.4)] transition-all duration-[800ms] ease-in-out"
+                    style={{ width: openPhase !== null && openPhase >= i + 1 ? '100%' : '0%' }}
+                  />
+                </div>
               </React.Fragment>
             ))}
+
+            {/* Connector line leading to Locked Premium Phase */}
+            <div className="flex-1 h-[2px] bg-gradient-to-r from-emerald-500/20 to-red-500/20 border-t border-dashed border-red-500/30"></div>
+
+            {/* Locked 4th Phase Button */}
+            <button
+              onClick={() => {
+                const element = document.getElementById('premium-locked');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+              }}
+              className="relative flex flex-col items-center transition-all duration-300 group/tracker opacity-85 hover:opacity-100 scale-100 hover:scale-105 z-10"
+            >
+              <div className="relative w-10 h-10 rounded-xl flex items-center justify-center border border-red-500/50 bg-[#060608] shadow-[0_0_12px_rgba(239,68,68,0.3)] hover:shadow-[0_0_20px_rgba(239,68,68,0.65)] hover:border-red-400 transition-all duration-300 overflow-hidden backdrop-blur-sm">
+                {/* Locked SVG Icon */}
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#ef4444" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="relative z-10 animate-pulse drop-shadow-[0_0_6px_#ef4444]">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                </svg>
+                <div className="absolute inset-0 bg-red-500/10 pointer-events-none" />
+              </div>
+              <span className="absolute top-12 left-1/2 -translate-x-1/2 text-[0.62rem] font-bold uppercase tracking-wider text-red-400 drop-shadow-[0_0_5px_rgba(239,68,68,0.4)] whitespace-nowrap">
+                Premium
+              </span>
+            </button>
           </div>
         </div>
 
@@ -387,6 +433,7 @@ const ChapterMap = () => {
         {/* Premium locked section */}
         <div
           ref={lockedRef}
+          id="premium-locked"
           className={`relative transition-all duration-700 delay-300 ${lockedInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
         >
           {/* Ghost cards behind overlay */}
@@ -437,35 +484,49 @@ const ChapterMap = () => {
             </div>
 
             <h4 className="text-xl md:text-2xl font-extrabold text-white mb-2 tracking-tight">Contenido Premium</h4>
-            <p className="text-gray-400 text-sm mb-4 max-w-xs leading-relaxed">
-              3 módulos avanzados solo disponibles con el Master completo.
+            <p className="text-gray-400 text-sm mb-4 max-w-md leading-relaxed">
+              Más de 12 capítulos diferentes con explicaciones sencillas, gráficos y ejemplos para que sin importar tu nivel entiendas todo el material.
             </p>
 
             {/* Module pills */}
-            <div className="flex flex-wrap justify-center gap-2 mb-5">
-              {lockedPhases.map((lp, i) => (
-                <span key={i} className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-full bg-white/[0.05] border border-white/[0.09] text-gray-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
-                  <PhaseIcon id={lp.iconId} className="w-3.5 h-3.5 text-orange-400/70" />
-                  {lp.title}
-                </span>
-              ))}
+            <div className="flex flex-wrap justify-center gap-2.5 mb-6 max-w-lg">
+              <span className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-full bg-white/[0.05] border border-white/[0.09] text-gray-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
+                <PhaseIcon id="foundation" className="w-3.5 h-3.5 text-orange-400/70" />
+                +120 Páginas de contenido dedicado
+              </span>
+              <span className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-full bg-white/[0.05] border border-white/[0.09] text-gray-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
+                <PhaseIcon id="gem" className="w-3.5 h-3.5 text-amber-400/70" />
+                Cómo Cazar Gemas antes que nadie
+              </span>
+              <span className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-full bg-white/[0.05] border border-white/[0.09] text-gray-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
+                <PhaseIcon id="strategy" className="w-3.5 h-3.5 text-blue-400/70" />
+                Estrategia Rentable de Trading
+              </span>
+              <span className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-full bg-white/[0.05] border border-white/[0.09] text-gray-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
+                <PhaseIcon id="journal" className="w-3.5 h-3.5 text-emerald-400/70" />
+                Diario De Trading Profesional
+              </span>
+              <span className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-full bg-white/[0.05] border border-white/[0.09] text-gray-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
+                <PhaseIcon id="chart" className="w-3.5 h-3.5 text-rose-400/70" />
+                Estrategia Spot Para Ganar Dinero En Mercados Bajistas 98%
+              </span>
+              <span className="inline-flex items-center gap-1.5 text-xs font-black px-3.5 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/35 text-orange-400 shadow-[0_0_12px_rgba(249,115,22,0.15)] uppercase tracking-wider animate-pulse">
+                🔥 El PDF se actualiza constantemente sin más pagos
+              </span>
             </div>
 
             {/* CTA Button */}
             <div className="flex flex-col items-center gap-3">
               <a
                 href="#buy"
-                className="group relative inline-flex items-center gap-3 text-white font-black text-base md:text-lg py-4 px-10 rounded-2xl overflow-hidden transition-all duration-300 hover:scale-[1.04] active:scale-[0.98]"
+                className="btn-main-cta group relative inline-flex items-center gap-3 text-white font-black text-base md:text-lg py-5 px-10 rounded-xl overflow-hidden transition-all duration-300 active:scale-[0.98] tracking-wider"
                 style={{
                   background: 'linear-gradient(135deg, #f97316 0%, #f59e0b 50%, #f97316 100%)',
                   backgroundSize: '200% 100%',
-                  boxShadow: '0 8px 32px rgba(249,115,22,0.45), 0 2px 8px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.2)',
                 }}
               >
                 {/* Animated shimmer */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out pointer-events-none" />
-                {/* Pulse ring */}
-                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ boxShadow: '0 0 0 6px rgba(249,115,22,0.15)' }} />
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/35 to-transparent -translate-x-full animate-[shimmer_2s_infinite]" />
 
                 {/* Icon left */}
                 <span className="relative z-10 flex items-center justify-center w-8 h-8 rounded-xl bg-white/20 shrink-0">
