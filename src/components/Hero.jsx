@@ -290,7 +290,7 @@ const Hero = () => {
         </div>
 
         {/* ══ RIGHT COLUMN ══ */}
-        <div className="flex-1 relative flex items-center justify-center w-full max-w-[300px] sm:max-w-[360px] lg:max-w-none pb-16 lg:pb-0">
+        <div className="flex-1 relative flex items-center justify-center w-full max-w-[320px] sm:max-w-[400px] lg:max-w-[520px] pb-16 lg:pb-0">
 
           {/* Outer glow ring */}
           <div className="absolute inset-0 bg-orange-500/[0.08] rounded-full blur-[100px] pointer-events-none" />
