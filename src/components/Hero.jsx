@@ -147,40 +147,39 @@ const Hero = () => {
       <div className="absolute bottom-0 left-[5%] w-[300px] h-[300px] bg-amber-600/[0.05] rounded-full blur-[120px] -z-10 animate-float" style={{ animationDelay: '3s' }} />
 
       {/* ── Content ── */}
-      <div className="flex-1 max-w-6xl mx-auto px-5 pt-14 pb-20 flex flex-col lg:flex-row items-center gap-12 lg:gap-20 relative z-10 w-full">
+      <div className="flex-1 max-w-6xl mx-auto px-4 pt-10 pb-14 lg:pt-14 lg:pb-20 flex flex-col lg:flex-row items-center gap-8 lg:gap-20 relative z-10 w-full">
 
         {/* ══ LEFT COLUMN ══ */}
         <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left max-w-[580px]">
 
           {/* Live status pill */}
-          <div className="inline-flex flex-wrap items-center gap-2 bg-white/[0.04] border border-white/[0.1] backdrop-blur-md px-4 py-2 rounded-full mb-7 max-w-full">
-            <span className="flex items-center gap-1.5 text-[0.7rem] font-black text-red-400 uppercase tracking-widest whitespace-nowrap">
+          <div className="inline-flex items-center gap-2 bg-white/[0.04] border border-white/[0.1] backdrop-blur-md px-3 sm:px-4 py-2 rounded-full mb-5 sm:mb-7">
+            <span className="flex items-center gap-1.5 text-[0.65rem] sm:text-[0.7rem] font-black text-red-400 uppercase tracking-widest whitespace-nowrap">
               <span className="relative flex h-2 w-2 shrink-0">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500" />
               </span>
               LANZAMIENTO
             </span>
-            <span className="w-px h-3 bg-white/15 hidden sm:block" />
-            <span className="text-[0.7rem] font-bold text-gray-400 uppercase tracking-wider whitespace-nowrap">Solo <span className="text-white font-black">{plazasLeft} plazas</span> a <span className="text-orange-400 font-black">79€</span></span>
+            <span className="w-px h-3 bg-white/15" />
+            <span className="text-[0.65rem] sm:text-[0.7rem] font-bold text-gray-400 uppercase tracking-wider whitespace-nowrap"><span className="text-white font-black">{plazasLeft} plazas</span> a <span className="text-orange-400 font-black">79€</span></span>
           </div>
 
           {/* Pain hook */}
-          <p className="text-orange-400 text-sm font-bold tracking-wide mb-3 drop-shadow-[0_0_10px_rgba(251,146,60,0.55)]">
-            Para traders que están cansados de perder dinero sin entender por qué →
+          <p className="text-orange-400 text-xs sm:text-sm font-bold tracking-wide mb-3 drop-shadow-[0_0_10px_rgba(251,146,60,0.55)]">
+            Para traders cansados de perder dinero sin saber por qué →
           </p>
 
           {/* H1 */}
-          <h1 className="text-4xl md:text-5xl lg:text-[3.2rem] font-black leading-[1.08] tracking-tight mb-5">
-            Deja de operar<br />
-            a ciegas.{' '}
+          <h1 className="text-[2rem] sm:text-4xl md:text-5xl lg:text-[3.2rem] font-black leading-[1.08] tracking-tight mb-4">
+            Deja de operar a ciegas.{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-300 to-orange-500 animate-gradient">
-              Opera con<br className="hidden md:block" /> un sistema real.
+              Opera con un sistema real.
             </span>
           </h1>
 
           {/* Social proof bar */}
-          <div className="flex items-center gap-4 mb-8 justify-center lg:justify-start flex-wrap">
+          <div className="flex items-center gap-3 mb-5 justify-center lg:justify-start flex-wrap">
             {/* Avatar stack */}
             <div className="flex -space-x-2.5">
               {['C','L','D','M','S'].map((l, i) => (
@@ -203,7 +202,7 @@ const Hero = () => {
           </div>
 
           {/* Benefits — compact 2×2 grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 w-full mb-6">
             {benefits.map((b, i) => (
               <div key={i} className={`group/benefit flex items-start gap-3 p-3.5 rounded-xl bg-white/[0.07] backdrop-blur-md border border-white/10 hover:bg-white/[0.12] hover:border-white/20 hover:-translate-y-0.5 hover:scale-[1.02] transition-all duration-300 text-left ${i === 4 ? 'sm:col-span-2' : ''}`}>
                 <div className={`shrink-0 w-8 h-8 rounded-lg flex items-center justify-center border ${b.bg} ${b.color} transition-all duration-300 group-hover/benefit:scale-110 group-hover/benefit:drop-shadow-[0_0_8px_currentColor]`}>
@@ -222,28 +221,28 @@ const Hero = () => {
             <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-orange-500/50 to-transparent" />
 
             {/* Price row */}
-            <div className="flex items-center justify-between mb-4 flex-wrap gap-3">
-              <div className="flex items-baseline gap-3">
-                <span className="text-gray-600 text-xl line-through font-bold">149€</span>
-                <span className="text-white text-5xl font-black tracking-tight">79<span className="text-orange-400 text-3xl">€</span></span>
-                <span className="bg-red-500/15 border border-red-500/25 text-red-400 text-[0.65rem] font-black uppercase tracking-widest px-2.5 py-1 rounded-full animate-pulse-ring">
+            <div className="flex items-center justify-between mb-3 gap-3">
+              <div className="flex items-baseline gap-2">
+                <span className="text-gray-600 text-base sm:text-xl line-through font-bold">149€</span>
+                <span className="text-white text-4xl sm:text-5xl font-black tracking-tight">79<span className="text-orange-400 text-2xl sm:text-3xl">€</span></span>
+                <span className="bg-red-500/15 border border-red-500/25 text-red-400 text-[0.6rem] font-black uppercase tracking-widest px-2 py-1 rounded-full">
                   −47%
                 </span>
               </div>
               {/* Countdown */}
-              <div className="flex items-center gap-1.5">
+              <div className="flex items-center gap-1">
                 {[
                   { val: pad(timeLeft.h), label: 'h' },
                   { val: pad(timeLeft.m), label: 'm' },
                   { val: pad(timeLeft.s), label: 's' },
                 ].map((u, i) => (
                   <React.Fragment key={i}>
-                    {i > 0 && <span className="text-orange-500/60 font-black text-sm">:</span>}
+                    {i > 0 && <span className="text-orange-500/60 font-black text-xs">:</span>}
                     <div className="flex flex-col items-center">
-                      <span className="bg-black/40 border border-white/[0.08] rounded-lg px-2 py-1.5 text-white font-black text-sm tabular-nums min-w-[2.2rem] text-center">
+                      <span className="bg-black/40 border border-white/[0.08] rounded-md px-1.5 py-1 text-white font-black text-xs sm:text-sm tabular-nums min-w-[1.8rem] sm:min-w-[2.2rem] text-center">
                         {u.val}
                       </span>
-                      <span className="text-[0.5rem] text-gray-600 font-bold uppercase mt-0.5">{u.label}</span>
+                      <span className="text-[0.45rem] text-gray-600 font-bold uppercase mt-0.5">{u.label}</span>
                     </div>
                   </React.Fragment>
                 ))}
@@ -253,7 +252,7 @@ const Hero = () => {
             {/* CTA */}
             <a
               href="#buy"
-              className="btn-main-cta group w-full flex items-center justify-center gap-3 bg-gradient-to-r from-orange-500 via-amber-500 to-orange-500 text-white font-black text-xl py-5 px-10 rounded-xl transition-all duration-300 active:scale-[0.98] relative overflow-hidden mt-5 mb-4 tracking-wider"
+              className="btn-main-cta group w-full flex items-center justify-center gap-2 sm:gap-3 bg-gradient-to-r from-orange-500 via-amber-500 to-orange-500 text-white font-black text-base sm:text-xl py-4 sm:py-5 px-6 sm:px-10 rounded-xl transition-all duration-300 active:scale-[0.98] relative overflow-hidden mt-4 mb-3 tracking-wide sm:tracking-wider"
             >
               <svg className="relative z-10 animate-bounce" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M12 4L12 20M12 20L18 14M12 20L6 14"/>

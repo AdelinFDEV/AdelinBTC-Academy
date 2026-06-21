@@ -67,8 +67,8 @@ const StickyBuyBar = () => {
             </span>
           </div>
 
-          {/* Center: countdown */}
-          <div className="flex items-center gap-1.5">
+          {/* Center: countdown — hidden on mobile */}
+          <div className="hidden sm:flex items-center gap-1.5">
             <div className="flex items-center gap-1">
               {[
                 { val: pad(timeLeft.h), label: 'h' },
@@ -89,10 +89,10 @@ const StickyBuyBar = () => {
           {/* Right: CTA */}
           <a
             href="#buy"
-            className="group inline-flex items-center justify-center gap-1.5 bg-gradient-to-r from-orange-500 to-amber-500 text-white font-bold text-xs sm:text-sm px-4 sm:px-7 py-3 rounded-full hover:shadow-[0_8px_24px_rgba(255,153,0,0.4)] transition-all duration-300 hover:scale-[1.03] active:scale-[0.97] relative overflow-hidden whitespace-nowrap shrink-0"
+            className="group inline-flex items-center justify-center gap-1.5 bg-gradient-to-r from-orange-500 to-amber-500 text-white font-bold text-sm px-6 sm:px-7 py-3 rounded-full hover:shadow-[0_8px_24px_rgba(255,153,0,0.4)] transition-all duration-300 hover:scale-[1.03] active:scale-[0.97] relative overflow-hidden whitespace-nowrap shrink-0"
           >
             <span className="relative z-10 hidden sm:inline">Descargar Ahora</span>
-            <span className="relative z-10 sm:hidden">Comprar</span>
+            <span className="relative z-10 sm:hidden">Descargar — 79€</span>
             <svg className="relative z-10" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M12 4L12 20M12 20L18 14M12 20L6 14"/>
             </svg>
