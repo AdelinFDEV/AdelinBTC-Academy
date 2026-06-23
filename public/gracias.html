@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¡Gracias por tu compra! — AdelinBTC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: #060608;
+      color: #e5e7eb;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    /* ── Navbar ── */
+    nav {
+      max-width: 72rem;
+      margin: 0 auto;
+      width: 100%;
+      padding: 1rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 10;
+    }
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+    .logo-white { color: #fff; }
+    .logo-orange {
+      background: linear-gradient(135deg, #fb923c, #f59e0b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 900;
+      font-size: 1.1em;
+    }
+    .nav-social { display: flex; align-items: center; gap: 0.75rem; }
+    .social-btn {
+      width: 2.5rem; height: 2.5rem;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .social-ig {
+      background: linear-gradient(135deg, rgba(234,179,8,.2), rgba(236,72,153,.25), rgba(147,51,234,.2));
+      border: 1px solid rgba(236,72,153,.5);
+      color: #f472b6;
+    }
+    .social-ig:hover {
+      background: linear-gradient(135deg, #eab308, #ec4899, #9333ea);
+      border-color: transparent; color: #fff;
+      box-shadow: 0 0 20px rgba(236,72,153,.6);
+    }
+    .social-yt {
+      background: rgba(220,38,38,.2);
+      border: 1px solid rgba(239,68,68,.5);
+      color: #f87171;
+    }
+    .social-yt:hover {
+      background: #dc2626; border-color: #dc2626; color: #fff;
+      box-shadow: 0 0 20px rgba(239,68,68,.6);
+    }
+
+    /* ── Background glows ── */
+    .glow {
+      position: fixed;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .glow-1 {
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(249,115,22,.08) 0%, transparent 70%);
+      filter: blur(100px);
+      top: -100px; right: -100px;
+    }
+    .glow-2 {
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(245,158,11,.05) 0%, transparent 70%);
+      filter: blur(120px);
+      bottom: 0; left: -100px;
+    }
+
+    /* ── Grid texture ── */
+    .grid-texture {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      opacity: 0.02;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,.5) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.5) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    /* ── Main ── */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem 4rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .wrapper {
+      max-width: 580px;
+      width: 100%;
+    }
+
+    /* Pago confirmado pill */
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.1);
+      backdrop-filter: blur(12px);
+      padding: 0.4rem 1rem 0.4rem 0.75rem;
+      border-radius: 999px;
+      margin-bottom: 1.5rem;
+    }
+    .pill-dot {
+      position: relative;
+      width: 0.5rem; height: 0.5rem;
+    }
+    .pill-dot span {
+      display: block;
+      width: 100%; height: 100%;
+      border-radius: 50%;
+      background: #4ade80;
+    }
+    .pill-dot::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: #4ade80;
+      opacity: .75;
+      animation: ping 1.2s cubic-bezier(0,0,.2,1) infinite;
+    }
+    @keyframes ping {
+      75%,100% { transform: scale(2); opacity: 0; }
+    }
+    .pill-text {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: #4ade80;
+    }
+    .pill-sep { width: 1px; height: 0.75rem; background: rgba(255,255,255,.15); }
+    .pill-sub {
+      font-size: .7rem;
+      font-weight: 600;
+      color: #6b7280;
+      letter-spacing: .05em;
+    }
+
+    /* Heading */
+    .eyebrow {
+      color: #fb923c;
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .05em;
+      margin-bottom: .75rem;
+      text-shadow: 0 0 20px rgba(251,146,60,.5);
+    }
+    h1 {
+      font-size: clamp(2rem, 6vw, 2.8rem);
+      font-weight: 900;
+      line-height: 1.08;
+      letter-spacing: -.02em;
+      color: #fff;
+      margin-bottom: .75rem;
+    }
+    h1 .gradient-text {
+      background: linear-gradient(90deg, #fb923c, #fbbf24, #f97316);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .subtitle {
+      color: #9ca3af;
+      font-size: .95rem;
+      line-height: 1.65;
+      margin-bottom: 2rem;
+    }
+    .subtitle strong { color: #e5e7eb; font-weight: 600; }
+
+    /* Divider */
+    .divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,.06);
+      margin: 0 0 2rem;
+    }
+
+    /* Steps */
+    .steps { display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: 2rem; }
+    .step { display: flex; align-items: flex-start; gap: 1rem; }
+    .step-num {
+      flex-shrink: 0;
+      width: 2rem; height: 2rem;
+      background: linear-gradient(135deg, #f97316, #f59e0b);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .8rem; font-weight: 800; color: #fff;
+      box-shadow: 0 4px 12px rgba(249,115,22,.35);
+    }
+    .step-body strong {
+      display: block;
+      color: #fff;
+      font-weight: 700;
+      font-size: .92rem;
+      margin-bottom: .2rem;
+    }
+    .step-body span {
+      color: #9ca3af;
+      font-size: .83rem;
+      line-height: 1.55;
+    }
+
+    /* Buttons block */
+    .cta-block {
+      background: linear-gradient(135deg, rgba(249,115,22,.12), rgba(255,255,255,.04), transparent);
+      border: 1px solid rgba(249,115,22,.3);
+      border-radius: 1.25rem;
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+    }
+    .cta-block::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(249,115,22,.5), transparent);
+    }
+
+    .btn-primary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .6rem;
+      width: 100%;
+      background: linear-gradient(90deg, #f97316, #fbbf24, #f97316);
+      background-size: 200%;
+      color: #fff;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 900;
+      letter-spacing: .04em;
+      padding: 1.1rem 1.5rem;
+      border-radius: .85rem;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform .25s, box-shadow .25s, background-position .4s;
+      box-shadow: 0 4px 24px rgba(249,115,22,.45);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: .85rem;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 36px rgba(249,115,22,.6);
+      background-position: right center;
+    }
+    .btn-primary .shimmer {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.3), transparent);
+      transform: translateX(-100%);
+      animation: shimmer 2s infinite;
+    }
+    @keyframes shimmer { to { transform: translateX(100%); } }
+
+    .btn-secondary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .6rem;
+      width: 100%;
+      background: rgba(255,255,255,.05);
+      color: #d1d5db;
+      font-family: 'Outfit', sans-serif;
+      font-size: .88rem;
+      font-weight: 600;
+      padding: .85rem 1.5rem;
+      border-radius: .85rem;
+      border: 1px solid rgba(255,255,255,.1);
+      cursor: pointer;
+      text-decoration: none;
+      transition: background .2s, color .2s, border-color .2s;
+    }
+    .btn-secondary:hover {
+      background: rgba(255,255,255,.09);
+      color: #fff;
+      border-color: rgba(255,255,255,.2);
+    }
+
+    /* Trust badges */
+    .trust-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255,255,255,.06);
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      color: #6b7280;
+      font-size: .72rem;
+      font-weight: 500;
+    }
+    .trust-item svg { color: rgba(251,146,60,.7); }
+
+    /* Instagram support block */
+    .ig-support {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: linear-gradient(135deg, rgba(236,72,153,.1), rgba(147,51,234,.08), rgba(234,179,8,.06));
+      border: 1px solid rgba(236,72,153,.35);
+      border-radius: 1rem;
+      padding: 1.1rem 1.25rem;
+      margin-top: 1.25rem;
+      text-decoration: none;
+      transition: all .25s;
+      position: relative;
+      overflow: hidden;
+    }
+    .ig-support::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(236,72,153,.5), transparent);
+    }
+    .ig-support:hover {
+      background: linear-gradient(135deg, rgba(236,72,153,.18), rgba(147,51,234,.14), rgba(234,179,8,.1));
+      border-color: rgba(236,72,153,.6);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(236,72,153,.2);
+    }
+    .ig-icon {
+      flex-shrink: 0;
+      width: 2.75rem; height: 2.75rem;
+      background: linear-gradient(135deg, rgba(234,179,8,.25), rgba(236,72,153,.3), rgba(147,51,234,.25));
+      border: 1px solid rgba(236,72,153,.4);
+      border-radius: .75rem;
+      display: flex; align-items: center; justify-content: center;
+      color: #f472b6;
+    }
+    .ig-body { flex: 1; min-width: 0; }
+    .ig-label {
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: #f472b6;
+      margin-bottom: .2rem;
+    }
+    .ig-title {
+      font-size: .95rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: .15rem;
+    }
+    .ig-sub {
+      font-size: .78rem;
+      color: #9ca3af;
+    }
+    .ig-arrow {
+      flex-shrink: 0;
+      color: rgba(244,114,182,.5);
+      transition: transform .2s, color .2s;
+    }
+    .ig-support:hover .ig-arrow {
+      transform: translateX(4px);
+      color: #f472b6;
+    }
+
+    @media (max-width: 480px) {
+      h1 { font-size: 1.75rem; }
+      .cta-block { padding: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="glow glow-1"></div>
+  <div class="glow glow-2"></div>
+  <div class="grid-texture"></div>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="/" class="logo">
+      <span class="logo-white">Adelin</span><span class="logo-orange">BTC</span>
+    </a>
+    <div class="nav-social">
+      <a href="https://www.instagram.com/adelinbtc" target="_blank" rel="noopener" class="social-btn social-ig">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+        </svg>
+      </a>
+      <a href="https://www.youtube.com/@AdelinBTC?sub_confirmation=1" target="_blank" rel="noopener" class="social-btn social-yt">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+          <path d="M21.582 6.186a2.684 2.684 0 0 0-1.884-1.895C17.985 3.843 12 3.843 12 3.843s-5.985 0-7.698.448A2.684 2.684 0 0 0 2.418 6.186C2 7.904 2 12 2 12s0 4.096.418 5.814a2.684 2.684 0 0 0 1.884 1.895c1.713.448 7.698.448 7.698.448s5.985 0 7.698-.448a2.684 2.684 0 0 0 1.884-1.895C22 16.096 22 12 22 12s0-4.096-.418-5.814zM9.912 15.352V8.648L15.688 12l-5.776 3.352z"/>
+        </svg>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Main content -->
+  <main>
+    <div class="wrapper">
+
+      <!-- Status pill -->
+      <div class="pill">
+        <div class="pill-dot"><span></span></div>
+        <span class="pill-text">Pago confirmado</span>
+        <span class="pill-sep"></span>
+        <span class="pill-sub">Acceso activo</span>
+      </div>
+
+      <!-- Heading -->
+      <p class="eyebrow">Ya formas parte del sistema →</p>
+      <h1>Bienvenido al<br/><span class="gradient-text">Master Cripto.</span></h1>
+      <p class="subtitle">
+        Tu compra está confirmada. Ahora solo falta un paso:<br/>
+        <strong>únete a la comunidad privada de Discord</strong> donde encontrarás todo el contenido, actualizaciones y soporte directo.
+      </p>
+
+      <hr class="divider" />
+
+      <!-- Steps -->
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <strong>¿No tienes cuenta en Discord?</strong>
+            <span>Es gratuito y solo tarda un minuto. Pulsa el botón de abajo para crear tu cuenta en la web oficial de Discord antes de continuar.</span>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <strong>Haz clic en "Unirse a la comunidad"</strong>
+            <span>Con tu cuenta ya creada, pulsa el botón naranja y tendrás acceso inmediato al servidor privado donde está todo el material.</span>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <strong>Accede a todo el contenido</strong>
+            <span>Master Cripto en PDF, actualizaciones de mercado, análisis en tiempo real y soporte directo. Todo en un solo lugar.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA block -->
+      <div class="cta-block">
+        <a href="https://discord.gg/jBTWYvCBt3" target="_blank" rel="noopener" class="btn-primary">
+          <div class="shimmer"></div>
+          <svg width="24" height="24" viewBox="0 0 71 55" fill="currentColor" style="position:relative;z-index:1">
+            <path d="M60.105 4.898A58.55 58.55 0 0 0 45.653.415a.22.22 0 0 0-.232.11 40.784 40.784 0 0 0-1.8 3.697 54.078 54.078 0 0 0-16.232 0 37.38 37.38 0 0 0-1.827-3.697.228.228 0 0 0-.233-.11 58.386 58.386 0 0 0-14.451 4.483.207.207 0 0 0-.095.082C1.578 18.945-.944 32.567.293 46.016a.244.244 0 0 0 .093.166 58.799 58.799 0 0 0 17.722 8.959.228.228 0 0 0 .246-.08 42.008 42.008 0 0 0 3.627-5.9.224.224 0 0 0-.122-.312 38.722 38.722 0 0 1-5.532-2.635.228.228 0 0 1-.022-.378c.372-.279.744-.569 1.1-.862a.22.22 0 0 1 .23-.03c11.609 5.298 24.198 5.298 35.673 0a.219.219 0 0 1 .232.027c.356.293.728.586 1.103.865a.228.228 0 0 1-.02.378 36.384 36.384 0 0 1-5.535 2.632.225.225 0 0 0-.12.315 47.249 47.249 0 0 0 3.623 5.897.225.225 0 0 0 .247.082 58.652 58.652 0 0 0 17.735-8.959.226.226 0 0 0 .093-.163c1.48-15.315-2.48-28.822-10.498-40.735a.178.178 0 0 0-.093-.084zM23.725 37.949c-3.497 0-6.38-3.211-6.38-7.156 0-3.944 2.827-7.156 6.38-7.156 3.583 0 6.438 3.24 6.382 7.156 0 3.945-2.827 7.156-6.382 7.156zm23.593 0c-3.498 0-6.38-3.211-6.38-7.156 0-3.944 2.826-7.156 6.38-7.156 3.582 0 6.437 3.24 6.38 7.156 0 3.945-2.826 7.156-6.38 7.156z"/>
+          </svg>
+          <span style="position:relative;z-index:1">UNIRSE A LA COMUNIDAD</span>
+        </a>
+        <a href="https://discord.com/register" target="_blank" rel="noopener" class="btn-secondary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/>
+          </svg>
+          ¿No tienes Discord? Créate una cuenta gratis aquí
+        </a>
+
+        <div class="trust-row">
+          <div class="trust-item">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+            Acceso inmediato
+          </div>
+          <div class="trust-item">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            Actualizaciones de por vida
+          </div>
+          <div class="trust-item">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            Servidor privado
+          </div>
+        </div>
+      </div>
+
+      <!-- Instagram support -->
+      <a href="https://www.instagram.com/adelinbtc" target="_blank" rel="noopener" class="ig-support">
+        <div class="ig-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+          </svg>
+        </div>
+        <div class="ig-body">
+          <div class="ig-label">¿Problemas para acceder?</div>
+          <div class="ig-title">Escríbeme por Instagram</div>
+          <div class="ig-sub">@AdelinBTC · Te respondo personalmente</div>
+        </div>
+        <svg class="ig-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+
+    </div>
+  </main>
+
+</body>
+</html>
