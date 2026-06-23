@@ -511,7 +511,8 @@ const ChapterMap = () => {
             {/* CTA Button */}
             <div className="flex flex-col items-center gap-2.5">
               <a
-                href="#buy"
+                href="https://buy.stripe.com/aFa6oH99G8KObKRcNLaZi01"
+                target="_blank" rel="noopener noreferrer"
                 className="group relative inline-flex items-center gap-2 text-white font-bold text-sm py-3 px-7 rounded-full overflow-hidden transition-all duration-300 hover:scale-[1.04] active:scale-[0.97] shadow-[0_4px_20px_rgba(249,115,22,0.35)]"
                 style={{ background: 'linear-gradient(135deg, #f97316 0%, #f59e0b 100%)' }}
               >

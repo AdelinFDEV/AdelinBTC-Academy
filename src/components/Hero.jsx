@@ -281,7 +281,8 @@ const Hero = () => {
 
             {/* CTA */}
             <a
-              href="#buy"
+              href="https://buy.stripe.com/aFa6oH99G8KObKRcNLaZi01"
+              target="_blank" rel="noopener noreferrer"
               className="btn-main-cta group w-full flex items-center justify-center gap-2 sm:gap-3 bg-gradient-to-r from-orange-500 via-amber-500 to-orange-500 text-white font-black text-base sm:text-xl py-4 sm:py-5 px-6 sm:px-10 rounded-xl transition-all duration-300 active:scale-[0.98] relative overflow-hidden mt-4 mb-3 tracking-wide sm:tracking-wider"
             >
               <svg className="relative z-10 animate-bounce" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">

@@ -337,7 +337,8 @@ const EmpiezaAqui = () => {
               Cada paso de esta guía te acerca a operar con criterio propio. Toma acción ahora y evita los errores que arruinan al 90% de los principiantes.
             </p>
             <a
-              href="/#buy"
+              href="https://buy.stripe.com/aFa6oH99G8KObKRcNLaZi01"
+              target="_blank" rel="noopener noreferrer"
               className="btn-main-cta inline-flex items-center justify-center gap-3 text-white font-black text-[0.95rem] px-8 py-4 rounded-full relative overflow-hidden transition-all duration-300 active:scale-[0.98]"
               style={{
                 background: 'linear-gradient(135deg, #f97316 0%, #f59e0b 50%, #f97316 100%)',

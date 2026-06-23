@@ -88,7 +88,8 @@ const StickyBuyBar = () => {
 
           {/* Right: CTA */}
           <a
-            href="#buy"
+            href="https://buy.stripe.com/aFa6oH99G8KObKRcNLaZi01"
+            target="_blank" rel="noopener noreferrer"
             className="group inline-flex items-center justify-center gap-1.5 bg-gradient-to-r from-orange-500 to-amber-500 text-white font-bold text-sm px-6 sm:px-7 py-3 rounded-full hover:shadow-[0_8px_24px_rgba(255,153,0,0.4)] transition-all duration-300 hover:scale-[1.03] active:scale-[0.97] relative overflow-hidden whitespace-nowrap shrink-0"
           >
             <span className="relative z-10 hidden sm:inline">Descargar Ahora</span>
